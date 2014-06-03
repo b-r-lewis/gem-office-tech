@@ -1,0 +1,47 @@
+.module {
+	padding-bottom: 3em;
+	
+	&:nth-of-type(2) {
+		background-color: $green;
+		border-top: 0.33em solid darken($green, 25%);
+	}
+}
+
+.header {
+	// background: url(../img/gem-logo.jpg) no-repeat;
+	// text-indent: 100%;
+	// white-space: nowrap;
+	margin: 0 auto;
+
+	h1 {
+
+	}
+
+	address {
+		font-size: 1.2em;
+	}
+
+}
+
+.shopping-list {
+
+	img {
+		width: 80%;
+		max-width: 420px;
+		display: block;
+	}
+
+}
+
+footer {
+	background-color: $green;
+	padding-top: 1em;
+
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+.colophon {
+	text-align: right;
+}

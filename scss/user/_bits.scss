@@ -1,0 +1,13 @@
+$white: #fff;
+$black: #222;
+$green: #a3c536;
+
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+
+@mixin font-stack-headers {
+	font-family: Pathway Gothic One, Helvetica, Arial, serif;
+}
+
+@mixin font-stack-body {
+
+}
