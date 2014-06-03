@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
 /* line 260, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.2.2/";
@@ -7788,4 +7789,70 @@ th.hide-for-touch {
 /* line 343, ../bower_components/foundation/scss/foundation/components/_visibility.scss */
 .touch th.show-for-touch {
   display: table-cell !important;
+}
+
+/* line 1, ../scss/user/_layout.scss */
+.module {
+  padding-bottom: 3em;
+}
+/* line 4, ../scss/user/_layout.scss */
+.module:nth-of-type(2) {
+  background-color: #a3c536;
+  border-top: 0.33em solid #50611b;
+}
+
+/* line 10, ../scss/user/_layout.scss */
+.header {
+  margin: 0 auto;
+}
+/* line 20, ../scss/user/_layout.scss */
+.header address {
+  font-size: 1.2em;
+}
+
+/* line 28, ../scss/user/_layout.scss */
+.shopping-list img {
+  width: 80%;
+  max-width: 420px;
+  display: block;
+}
+
+/* line 36, ../scss/user/_layout.scss */
+footer {
+  background-color: #a3c536;
+  padding-top: 1em;
+}
+/* line 40, ../scss/user/_layout.scss */
+footer p {
+  font-size: 0.8rem;
+}
+
+/* line 45, ../scss/user/_layout.scss */
+.colophon {
+  text-align: right;
+}
+
+/* line 1, ../scss/user/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Pathway Gothic One, Helvetica, Arial, serif;
+  font-weight: bold;
+  letter-spacing: 0.0625em;
+  text-transform: uppercase;
+}
+
+/* line 13, ../scss/user/_typography.scss */
+h1 {
+  font-size: 3em;
+}
+
+/* line 14, ../scss/user/_typography.scss */
+h2 {
+  font-size: 2.5em;
+  border-bottom: 1px solid #222222;
+  margin-bottom: 0.75em;
 }
