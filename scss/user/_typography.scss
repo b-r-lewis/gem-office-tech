@@ -30,15 +30,10 @@ body {
 .byline {
 	display: block;
 
-	@include font-stack-body;
 	font-size: 0.7em;
 	font-weight: normal;
 	letter-spacing: normal;
 	text-transform: none;
-
-	@media #{$small-only} {
-		// font-size: 0.6em;
-	}
 }
 
 em {

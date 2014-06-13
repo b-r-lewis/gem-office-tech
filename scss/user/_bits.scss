@@ -5,9 +5,9 @@ $green: #a3c536;
 @import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
 
 @mixin font-stack-headers {
-	font-family: Pathway Gothic One, Helvetica, Arial, serif;
+	font-family: Pathway Gothic One, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 
 @mixin font-stack-body {
-	font-family: Pathway Gothic One, Helvetica, Arial, serif;
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }

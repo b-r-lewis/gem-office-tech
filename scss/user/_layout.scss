@@ -13,10 +13,7 @@ header {
 	.logo {
 		text-align: center;	
 	
-		img {
-			padding: 1em;
-		}
-		
+		img { padding: 1em; }
 	}
 
 	@media #{$medium-up} {
@@ -26,20 +23,7 @@ header {
 				display: flex;
 				align-items: center;
 			}
-
-			img, .header { }
 		}
-
-	}
-
-}
-
-.shopping-list {
-
-	img {
-		width: 80%;
-		max-width: 420px;
-		display: block;
 	}
 
 }
