@@ -12,8 +12,8 @@ meta.foundation-mq-small {
 
 /* line 269, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-mq-medium {
-  font-family: "/only screen and (min-width:40.063em)/";
-  width: 40.063em;
+  font-family: "/only screen and (min-width:45.063em)/";
+  width: 45.063em;
 }
 
 /* line 274, ../bower_components/foundation/scss/foundation/components/_global.scss */
@@ -566,7 +566,7 @@ select {
     float: right;
   }
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 157, ../bower_components/foundation/scss/foundation/components/_grid.scss */
   .medium-push-0 {
     position: relative;
@@ -1896,7 +1896,7 @@ select {
     clear: both;
   }
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 61, ../bower_components/foundation/scss/foundation/components/_block-grid.scss */
   .medium-block-grid-1 > li {
     width: 100%;
@@ -2515,7 +2515,7 @@ button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert
   background-color: #f04124;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 216, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
   button, .button {
     display: inline-block;
@@ -2859,7 +2859,7 @@ button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert
   display: block;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 143, ../bower_components/foundation/scss/foundation/components/_clearing.scss */
   .clearing-main-prev,
   .clearing-main-next {
@@ -4014,7 +4014,7 @@ label.error {
 }
 
 /* Styles for screens that are at least 768px; */
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 190, ../bower_components/foundation/scss/foundation/components/_joyride.scss */
   .joyride-tip-guide {
     width: 300px;
@@ -4491,7 +4491,7 @@ kbd {
   display: none;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 377, ../bower_components/foundation/scss/foundation/components/_orbit.scss */
   .touch .orbit-container .orbit-prev,
   .touch .orbit-container .orbit-next {
@@ -4502,7 +4502,7 @@ kbd {
     display: block;
   }
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 45em) {
   /* line 389, ../bower_components/foundation/scss/foundation/components/_orbit.scss */
   .orbit-stack-on-small .orbit-slides-container {
     height: auto !important;
@@ -4894,13 +4894,13 @@ dialog, .reveal-modal {
   border: solid 1px #666666;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 45em) {
   /* line 164, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog, .reveal-modal {
     min-height: 100vh;
   }
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 164, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog, .reveal-modal {
     left: 50%;
@@ -4920,14 +4920,14 @@ dialog > :first-child, .reveal-modal > :first-child {
 dialog > :last-child, .reveal-modal > :last-child {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 164, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog, .reveal-modal {
     margin-left: -40%;
     width: 80%;
   }
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 164, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog, .reveal-modal {
     top: 6.25rem;
@@ -4951,7 +4951,7 @@ dialog[open] {
   visibility: visible;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 184, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog, .reveal-modal {
     padding: 1.875rem;
@@ -4969,35 +4969,35 @@ dialog[open] {
     padding: 0;
   }
 }
-@media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) and (min-width: 45.063em) {
   /* line 192, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog.tiny, .reveal-modal.tiny {
     margin-left: -15%;
     width: 30%;
   }
 }
-@media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) and (min-width: 45.063em) {
   /* line 193, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog.small, .reveal-modal.small {
     margin-left: -20%;
     width: 40%;
   }
 }
-@media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) and (min-width: 45.063em) {
   /* line 194, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog.medium, .reveal-modal.medium {
     margin-left: -30%;
     width: 60%;
   }
 }
-@media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) and (min-width: 45.063em) {
   /* line 195, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog.large, .reveal-modal.large {
     margin-left: -35%;
     width: 70%;
   }
 }
-@media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) and (min-width: 45.063em) {
   /* line 196, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog.xlarge, .reveal-modal.xlarge {
     margin-left: -47.5%;
@@ -5005,7 +5005,7 @@ dialog[open] {
   }
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 200, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog.full, .reveal-modal.full {
     top: 0;
@@ -5015,7 +5015,7 @@ dialog[open] {
     margin-left: 0 !important;
   }
 }
-@media only screen and (min-width: 40.063em) and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) and (min-width: 45.063em) {
   /* line 200, ../bower_components/foundation/scss/foundation/components/_reveal.scss */
   dialog.full, .reveal-modal.full {
     margin-left: -50vw;
@@ -5602,7 +5602,7 @@ table tfoot tr td {
   padding: 0 0.9375rem;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 84, ../bower_components/foundation/scss/foundation/components/_tabs.scss */
   .tabs.vertical {
     width: 20%;
@@ -5717,7 +5717,7 @@ table tfoot tr td {
   font-weight: normal;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 108, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
   .tooltip > .nub {
     border-color: transparent transparent #333333 transparent;
@@ -5752,8 +5752,8 @@ table tfoot tr td {
 }
 /* line 103, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 meta.foundation-mq-topbar {
-  font-family: "/only screen and (min-width:40.063em)/";
-  width: 40.063em;
+  font-family: "/only screen and (min-width:45.063em)/";
+  width: 45.063em;
 }
 
 /* Wrapped around .top-bar to contain to grid width */
@@ -6191,7 +6191,7 @@ meta.foundation-mq-topbar {
   display: block;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 431, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar {
     background: #333333;
@@ -6442,7 +6442,7 @@ meta.foundation-mq-topbar {
   text-align: justify !important;
 }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 45em) {
   /* line 144, ../bower_components/foundation/scss/foundation/components/_type.scss */
   .small-only-text-left {
     text-align: left !important;
@@ -6484,7 +6484,7 @@ meta.foundation-mq-topbar {
     text-align: justify !important;
   }
 }
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+@media only screen and (min-width: 45.063em) and (max-width: 64em) {
   /* line 144, ../bower_components/foundation/scss/foundation/components/_type.scss */
   .medium-only-text-left {
     text-align: left !important;
@@ -6505,7 +6505,7 @@ meta.foundation-mq-topbar {
     text-align: justify !important;
   }
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 144, ../bower_components/foundation/scss/foundation/components/_type.scss */
   .medium-text-left {
     text-align: left !important;
@@ -6970,7 +6970,7 @@ blockquote p {
   padding: 0 0.0625rem;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 425, ../bower_components/foundation/scss/foundation/components/_type.scss */
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
@@ -7185,7 +7185,7 @@ blockquote p {
   height: 2.8125rem;
   top: 0;
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 329, ../bower_components/foundation/scss/foundation/components/_offcanvas.scss */
   .tab-bar-section {
     text-align: left;
@@ -7345,7 +7345,7 @@ ul.off-canvas-list li a:hover {
   z-index: 1002;
   -webkit-tap-highlight-color: transparent;
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 259, ../bower_components/foundation/scss/foundation/components/_offcanvas.scss */
   .move-right .exit-off-canvas:hover {
     background: rgba(255, 255, 255, 0.05);
@@ -7377,7 +7377,7 @@ ul.off-canvas-list li a:hover {
   z-index: 1002;
   -webkit-tap-highlight-color: transparent;
 }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 259, ../bower_components/foundation/scss/foundation/components/_offcanvas.scss */
   .move-left .exit-off-canvas:hover {
     background: rgba(255, 255, 255, 0.05);
@@ -7439,7 +7439,7 @@ ul.off-canvas-list li a:hover {
   }
 }
 /* medium displays */
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 45.063em) {
   /* line 204, ../bower_components/foundation/scss/foundation/components/_visibility.scss */
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .show-for-medium-only, .show-for-medium-up, .show-for-medium, .show-for-medium-down, .hide-for-large-only, .hide-for-large-up, .hide-for-large, .show-for-large-down, .hide-for-xlarge-only, .hide-for-xlarge-up, .hide-for-xxlarge-only, .hide-for-xxlarge-up {
     display: inherit !important;
@@ -7802,32 +7802,41 @@ th.hide-for-touch {
 }
 
 /* line 10, ../scss/user/_layout.scss */
-.header {
-  margin: 0 auto;
+header {
+  margin-bottom: 2em;
 }
-/* line 20, ../scss/user/_layout.scss */
-.header address {
-  font-size: 1.2em;
+/* line 13, ../scss/user/_layout.scss */
+header .logo {
+  text-align: center;
+}
+/* line 16, ../scss/user/_layout.scss */
+header .logo img {
+  padding: 1em;
+}
+@media only screen and (min-width: 45.063em) {
+  /* line 24, ../scss/user/_layout.scss */
+  header .logo a {
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
 }
 
-/* line 28, ../scss/user/_layout.scss */
+/* line 39, ../scss/user/_layout.scss */
 .shopping-list img {
   width: 80%;
   max-width: 420px;
   display: block;
 }
 
-/* line 36, ../scss/user/_layout.scss */
+/* line 47, ../scss/user/_layout.scss */
 footer {
   background-color: #a3c536;
   padding-top: 1em;
-}
-/* line 40, ../scss/user/_layout.scss */
-footer p {
   font-size: 0.8rem;
 }
 
-/* line 45, ../scss/user/_layout.scss */
+/* line 53, ../scss/user/_layout.scss */
 .colophon {
   text-align: right;
 }
@@ -7842,17 +7851,44 @@ h6 {
   font-family: Pathway Gothic One, Helvetica, Arial, serif;
   font-weight: bold;
   letter-spacing: 0.0625em;
+  line-height: 1;
   text-transform: uppercase;
 }
 
-/* line 13, ../scss/user/_typography.scss */
+/* line 14, ../scss/user/_typography.scss */
 h1 {
   font-size: 3em;
 }
+@media only screen and (max-width: 45em) {
+  /* line 14, ../scss/user/_typography.scss */
+  h1 {
+    font-size: 2.1em;
+  }
+}
 
-/* line 14, ../scss/user/_typography.scss */
+/* line 22, ../scss/user/_typography.scss */
 h2 {
   font-size: 2.5em;
-  border-bottom: 1px solid #222222;
-  margin-bottom: 0.75em;
+}
+
+/* line 26, ../scss/user/_typography.scss */
+body {
+  font-family: Pathway Gothic One, Helvetica, Arial, serif;
+}
+
+/* line 30, ../scss/user/_typography.scss */
+.byline {
+  display: block;
+  font-family: Pathway Gothic One, Helvetica, Arial, serif;
+  font-size: 0.7em;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* line 44, ../scss/user/_typography.scss */
+em {
+  color: #a3c536;
+  font-size: 1.1em;
+  font-style: normal;
 }
