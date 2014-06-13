@@ -7,18 +7,29 @@
 	}
 }
 
-.header {
-	// background: url(../img/gem-logo.jpg) no-repeat;
-	// text-indent: 100%;
-	// white-space: nowrap;
-	margin: 0 auto;
-
-	h1 {
-
+header {
+	margin-bottom: 2em;
+	
+	.logo {
+		text-align: center;	
+	
+		img {
+			padding: 1em;
+		}
+		
 	}
 
-	address {
-		font-size: 1.2em;
+	@media #{$medium-up} {
+		.logo {
+			a {
+				text-align: left;
+				display: flex;
+				align-items: center;
+			}
+
+			img, .header { }
+		}
+
 	}
 
 }
@@ -36,10 +47,7 @@
 footer {
 	background-color: $green;
 	padding-top: 1em;
-
-	p {
-		font-size: 0.8rem;
-	}
+	font-size: 0.8rem;
 }
 
 .colophon {

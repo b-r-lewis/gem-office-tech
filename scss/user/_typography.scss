@@ -7,12 +7,42 @@ h6 {
 	@include font-stack-headers;
 	font-weight: bold;
 	letter-spacing: 0.0625em;
+	line-height: 1;
 	text-transform: uppercase;
 }
 
-h1 { font-size: 3em; }
+h1 {
+	font-size: 3em;
+
+	@media #{$small-only} {
+		font-size: 2.1em;
+	}
+}
+
 h2 {
 	font-size: 2.5em;
-	border-bottom: 1px solid $black;
-	margin-bottom: 0.75em;
+}
+
+body {
+	@include font-stack-body;
+}
+
+.byline {
+	display: block;
+
+	@include font-stack-body;
+	font-size: 0.7em;
+	font-weight: normal;
+	letter-spacing: normal;
+	text-transform: none;
+
+	@media #{$small-only} {
+		// font-size: 0.6em;
+	}
+}
+
+em {
+	color: $green;
+	font-size: 1.1em;
+	font-style: normal;
 }
