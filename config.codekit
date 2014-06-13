@@ -3545,6 +3545,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/banner-business.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 63434,
+		"inputAbbreviatedPath": "\/img\/banner-business.jpg",
+		"outputAbbreviatedPath": "\/img\/banner-business.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/banner-tiered color.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 58897,
+		"inputAbbreviatedPath": "\/img\/banner-tiered color.jpg",
+		"outputAbbreviatedPath": "\/img\/banner-tiered color.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/Control Panel Simulator.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 198811,
+		"inputAbbreviatedPath": "\/img\/Control Panel Simulator.jpg",
+		"outputAbbreviatedPath": "\/img\/Control Panel Simulator.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/Copystar Logo.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 148402,
+		"inputAbbreviatedPath": "\/img\/Copystar Logo.jpg",
+		"outputAbbreviatedPath": "\/img\/Copystar Logo.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/gem-logo.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

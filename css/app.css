@@ -7814,7 +7814,7 @@ header .logo img {
   padding: 1em;
 }
 @media only screen and (min-width: 45.063em) {
-  /* line 24, ../scss/user/_layout.scss */
+  /* line 21, ../scss/user/_layout.scss */
   header .logo a {
     text-align: left;
     display: flex;
@@ -7822,21 +7822,14 @@ header .logo img {
   }
 }
 
-/* line 39, ../scss/user/_layout.scss */
-.shopping-list img {
-  width: 80%;
-  max-width: 420px;
-  display: block;
-}
-
-/* line 47, ../scss/user/_layout.scss */
+/* line 31, ../scss/user/_layout.scss */
 footer {
   background-color: #a3c536;
   padding-top: 1em;
   font-size: 0.8rem;
 }
 
-/* line 53, ../scss/user/_layout.scss */
+/* line 37, ../scss/user/_layout.scss */
 .colophon {
   text-align: right;
 }
@@ -7848,7 +7841,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Pathway Gothic One, Helvetica, Arial, serif;
+  font-family: Pathway Gothic One, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: bold;
   letter-spacing: 0.0625em;
   line-height: 1;
@@ -7873,20 +7866,19 @@ h2 {
 
 /* line 26, ../scss/user/_typography.scss */
 body {
-  font-family: Pathway Gothic One, Helvetica, Arial, serif;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 
 /* line 30, ../scss/user/_typography.scss */
 .byline {
   display: block;
-  font-family: Pathway Gothic One, Helvetica, Arial, serif;
   font-size: 0.7em;
   font-weight: normal;
   letter-spacing: normal;
   text-transform: none;
 }
 
-/* line 44, ../scss/user/_typography.scss */
+/* line 39, ../scss/user/_typography.scss */
 em {
   color: #a3c536;
   font-size: 1.1em;
