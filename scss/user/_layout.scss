@@ -1,3 +1,5 @@
+html { overflow-y: scroll; }
+
 .module {
 	padding-bottom: 3em;
 	
@@ -9,21 +11,30 @@
 
 header {
 	margin-bottom: 2em;
-	
-	.logo {
-		text-align: center;	
-	
-		img { padding: 1em; }
-	}
 
-	@media #{$medium-up} {
+	.logo {
+		text-align: center;
+
+		img {
+			margin: 1.25em 0;
+		}
+	}
+	
+	@media #{$large-up} {
 		.logo {
-			a {
-				text-align: left;
-				display: flex;
-				align-items: center;
+			display: table;
+			text-align: left;
+
+			img {
+				margin-right: 1.25em;
+			}
+
+			.logo__text {
+				display: table-cell;
+				vertical-align: center;
 			}
 		}
+
 	}
 
 }
@@ -36,4 +47,22 @@ footer {
 
 .colophon {
 	text-align: right;
+}
+
+.panel--construction {
+	@include panel( $bg:lighten(red,20%) );
+	margin: 1em 0;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1.3;
+	}
+}
+
+.panel--simulator {
+	@include panel( $bg:$green );
 }

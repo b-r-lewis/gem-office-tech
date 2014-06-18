@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+@import url(http://fonts.googleapis.com/css?family=Orbitron|Pathway+Gothic+One);
 /* line 260, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.2.2/";
@@ -7792,46 +7792,131 @@ th.hide-for-touch {
 }
 
 /* line 1, ../scss/user/_layout.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 3, ../scss/user/_layout.scss */
 .module {
   padding-bottom: 3em;
 }
-/* line 4, ../scss/user/_layout.scss */
+/* line 6, ../scss/user/_layout.scss */
 .module:nth-of-type(2) {
   background-color: #a3c536;
   border-top: 0.33em solid #50611b;
 }
 
-/* line 10, ../scss/user/_layout.scss */
+/* line 12, ../scss/user/_layout.scss */
 header {
   margin-bottom: 2em;
 }
-/* line 13, ../scss/user/_layout.scss */
+/* line 15, ../scss/user/_layout.scss */
 header .logo {
   text-align: center;
 }
-/* line 16, ../scss/user/_layout.scss */
+/* line 18, ../scss/user/_layout.scss */
 header .logo img {
-  padding: 1em;
+  margin: 1.25em 0;
 }
-@media only screen and (min-width: 45.063em) {
-  /* line 21, ../scss/user/_layout.scss */
-  header .logo a {
+@media only screen and (min-width: 64.063em) {
+  /* line 24, ../scss/user/_layout.scss */
+  header .logo {
+    display: table;
     text-align: left;
-    display: flex;
-    align-items: center;
+  }
+  /* line 28, ../scss/user/_layout.scss */
+  header .logo img {
+    margin-right: 1.25em;
+  }
+  /* line 32, ../scss/user/_layout.scss */
+  header .logo .logo__text {
+    display: table-cell;
+    vertical-align: center;
   }
 }
 
-/* line 31, ../scss/user/_layout.scss */
+/* line 42, ../scss/user/_layout.scss */
 footer {
   background-color: #a3c536;
   padding-top: 1em;
   font-size: 0.8rem;
 }
 
-/* line 37, ../scss/user/_layout.scss */
+/* line 48, ../scss/user/_layout.scss */
 .colophon {
   text-align: right;
+}
+
+/* line 52, ../scss/user/_layout.scss */
+.panel--construction {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ff3f3f;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #ff6666;
+  margin: 1em 0;
+}
+/* line 52, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--construction > :first-child {
+  margin-top: 0;
+}
+/* line 53, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--construction > :last-child {
+  margin-bottom: 0;
+}
+/* line 58, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--construction h1, .panel--construction h2, .panel--construction h3, .panel--construction h4, .panel--construction h5, .panel--construction h6, .panel--construction p {
+  color: #333333;
+}
+/* line 62, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--construction h1, .panel--construction h2, .panel--construction h3, .panel--construction h4, .panel--construction h5, .panel--construction h6 {
+  line-height: 1;
+  margin-bottom: 0.625rem;
+}
+/* line 64, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--construction h1.subheader, .panel--construction h2.subheader, .panel--construction h3.subheader, .panel--construction h4.subheader, .panel--construction h5.subheader, .panel--construction h6.subheader {
+  line-height: 1.4;
+}
+/* line 56, ../scss/user/_layout.scss */
+.panel--construction h1,
+.panel--construction h2,
+.panel--construction h3,
+.panel--construction h4,
+.panel--construction h5,
+.panel--construction h6 {
+  line-height: 1.3;
+}
+
+/* line 66, ../scss/user/_layout.scss */
+.panel--simulator {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #91af30;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #a3c536;
+}
+/* line 52, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--simulator > :first-child {
+  margin-top: 0;
+}
+/* line 53, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--simulator > :last-child {
+  margin-bottom: 0;
+}
+/* line 59, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--simulator h1, .panel--simulator h2, .panel--simulator h3, .panel--simulator h4, .panel--simulator h5, .panel--simulator h6, .panel--simulator p {
+  color: white;
+}
+/* line 62, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--simulator h1, .panel--simulator h2, .panel--simulator h3, .panel--simulator h4, .panel--simulator h5, .panel--simulator h6 {
+  line-height: 1;
+  margin-bottom: 0.625rem;
+}
+/* line 64, ../bower_components/foundation/scss/foundation/components/_panels.scss */
+.panel--simulator h1.subheader, .panel--simulator h2.subheader, .panel--simulator h3.subheader, .panel--simulator h4.subheader, .panel--simulator h5.subheader, .panel--simulator h6.subheader {
+  line-height: 1.4;
 }
 
 /* line 1, ../scss/user/_typography.scss */
@@ -7841,44 +7926,75 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Pathway Gothic One, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: Orbitron, Pathway Gothic One, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: bold;
   letter-spacing: 0.0625em;
-  line-height: 1;
+  line-height: 1.3;
   text-transform: uppercase;
 }
-
-/* line 14, ../scss/user/_typography.scss */
-h1 {
-  font-size: 3em;
+@media only screen and (min-width: 45.063em) {
+  /* line 1, ../scss/user/_typography.scss */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1;
+  }
 }
-@media only screen and (max-width: 45em) {
-  /* line 14, ../scss/user/_typography.scss */
+
+/* line 18, ../scss/user/_typography.scss */
+h1 {
+  font-size: 1.7em;
+  line-height: 1.2;
+}
+@media only screen and (min-width: 45.063em) {
+  /* line 18, ../scss/user/_typography.scss */
   h1 {
     font-size: 2.1em;
   }
 }
-
-/* line 22, ../scss/user/_typography.scss */
-h2 {
-  font-size: 2.5em;
+@media only screen and (min-width: 64.063em) {
+  /* line 18, ../scss/user/_typography.scss */
+  h1 {
+    font-size: 2.5em;
+  }
 }
 
-/* line 26, ../scss/user/_typography.scss */
+/* line 31, ../scss/user/_typography.scss */
+h2 {
+  font-size: 1.2em;
+}
+@media only screen and (min-width: 45.063em) {
+  /* line 31, ../scss/user/_typography.scss */
+  h2 {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 64.063em) {
+  /* line 31, ../scss/user/_typography.scss */
+  h2 {
+    font-size: 1.8em;
+  }
+}
+
+/* line 43, ../scss/user/_typography.scss */
 body {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 
-/* line 30, ../scss/user/_typography.scss */
+/* line 47, ../scss/user/_typography.scss */
 .byline {
   display: block;
-  font-size: 0.7em;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 0.5em;
   font-weight: normal;
   letter-spacing: normal;
   text-transform: none;
 }
 
-/* line 39, ../scss/user/_typography.scss */
+/* line 57, ../scss/user/_typography.scss */
 em {
   color: #a3c536;
   font-size: 1.1em;
