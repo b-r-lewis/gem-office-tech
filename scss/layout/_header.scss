@@ -1,0 +1,29 @@
+header {
+	margin-bottom: 2em;
+
+	.logo {
+		text-align: center;
+
+		img {
+			margin: 1.25em 0;
+		}
+	}
+	
+	@media #{$large-up} {
+		.logo {
+			display: table;
+			text-align: left;
+
+			img {
+				margin-right: 1.25em;
+			}
+
+			.logo__text {
+				display: table-cell;
+				vertical-align: center;
+			}
+		}
+
+	}
+
+}
