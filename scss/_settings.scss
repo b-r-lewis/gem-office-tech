@@ -1172,7 +1172,7 @@ $medium-range: (45.063em, 64em);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 45px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1194,15 +1194,17 @@ $medium-range: (45.063em, 64em);
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(16);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-hover: #272727;
 // $topbar-link-bg-active: $primary-color;
+$topbar-link-bg-active: #a3c536;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
+$topbar-link-bg-active-hover: scale-color(#a3c536, $lightness: -20%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
+$topbar-link-padding: $topbar-height / 2;
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
@@ -1215,7 +1217,7 @@ $medium-range: (45.063em, 64em);
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
-// $topbar-menu-link-font-size: rem-calc(13);
+$topbar-menu-link-font-size: rem-calc(16);
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #fff;
 // $topbar-menu-icon-color: #fff;
