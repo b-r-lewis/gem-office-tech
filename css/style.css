@@ -7971,6 +7971,18 @@ em {
   margin-top: 1.5em;
 }
 
+/* line 5, ../scss/layout/_content.scss */
+.manufacturer {
+  display: block;
+}
+
+/* line 10, ../scss/layout/_content.scss */
+.manufacturer-list img {
+  max-height: 250px;
+  max-width: 250px;
+  margin-right: 2em;
+}
+
 /* line 1, ../scss/layout/_footer.scss */
 footer {
   background-color: #a3c536;
