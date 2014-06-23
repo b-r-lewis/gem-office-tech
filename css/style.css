@@ -7852,11 +7852,23 @@ h2 {
 }
 
 /* line 43, ../scss/user/_typography.scss */
+h4 {
+  font-size: 1.2em;
+}
+
+/* line 47, ../scss/user/_typography.scss */
 body {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 
-/* line 47, ../scss/user/_typography.scss */
+/* line 51, ../scss/user/_typography.scss */
+em {
+  color: #a3c536;
+  font-size: 1.1em;
+  font-style: normal;
+}
+
+/* line 57, ../scss/user/_typography.scss */
 .byline {
   display: block;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -7866,11 +7878,20 @@ body {
   text-transform: none;
 }
 
-/* line 57, ../scss/user/_typography.scss */
-em {
-  color: #a3c536;
-  font-size: 1.1em;
-  font-style: normal;
+/* line 67, ../scss/user/_typography.scss */
+.tagline {
+  display: block;
+}
+@media only screen and (min-width: 45.063em) {
+  /* line 67, ../scss/user/_typography.scss */
+  .tagline {
+    display: inline;
+  }
+}
+/* line 74, ../scss/user/_typography.scss */
+.tagline em {
+  font-style: italic;
+  color: #222222;
 }
 
 /* line 1, ../scss/components/_panels.scss */
@@ -7881,7 +7902,7 @@ em {
   margin-bottom: 1.25rem;
   padding: 1.25rem;
   background: #ff6666;
-  margin: 1em 0;
+  margin: 1em 0 2em;
 }
 /* line 52, ../bower_components/foundation/scss/foundation/components/_panels.scss */
 .panel--construction > :first-child {

@@ -40,8 +40,18 @@ h2 {
 	}
 }
 
+h4 {
+	font-size: 1.2em;
+}
+
 body {
 	@include font-stack-body;
+}
+
+em {
+	color: $gem-green;
+	font-size: 1.1em;
+	font-style: normal;
 }
 
 .byline {
@@ -54,8 +64,15 @@ body {
 	text-transform: none;
 }
 
-em {
-	color: $gem-green;
-	font-size: 1.1em;
-	font-style: normal;
+.tagline {
+	display: block;
+
+	@media #{$medium-up} {
+		display: inline;
+	}
+
+	em {
+		font-style: italic;
+		color: $black;
+	}
 }
