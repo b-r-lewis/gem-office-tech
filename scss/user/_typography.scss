@@ -22,7 +22,6 @@ h1 {
 	@media #{$medium-up} {
 		font-size: 2.1em;
 	}
-
 	@media #{$large-up} {
 		font-size: 2.5em;
 	}
@@ -31,10 +30,9 @@ h1 {
 h2 {
 	font-size: 1.2em;
 
-@media #{$medium-up} {
+	@media #{$medium-up} {
 		font-size: 1.5em;
 	}
-
 	@media #{$large-up} {
 		font-size: 1.8em;
 	}
@@ -54,11 +52,15 @@ em {
 	font-style: normal;
 }
 
+a[href^="tel:"] {
+	color: #222;
+}
+
 .byline {
 	display: block;
 
 	@include font-stack-body;
-	font-size: 0.5em;
+	font-size: 0.6em;
 	font-weight: normal;
 	letter-spacing: normal;
 	text-transform: none;

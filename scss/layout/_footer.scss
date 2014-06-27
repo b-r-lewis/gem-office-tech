@@ -1,13 +1,15 @@
 footer {
 	background-color: $gem-green;
-	padding-top: 1em;
+	padding: 2em 0;
 	font-size: 0.8rem;
 }
 
-.colophon {
-	text-align: right;
-}
+.company-info {
+	margin-bottom: 2em;
 
-.tagline {
-	
+	p { 
+		line-height: 1.2;
+		margin-bottom: 0;
+	}
+
 }

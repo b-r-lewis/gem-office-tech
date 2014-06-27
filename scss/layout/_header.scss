@@ -1,15 +1,29 @@
 header {
-	margin-bottom: 2em;
+	margin: 3em 0 1.5em;
 
 	.logo {
 		text-align: center;
 
 		img {
-			margin: 1.25em 0;
+			// margin: 1.25em 0;
+		}
+
+		.logo__text {
+			margin-top: 2em;
+		}
+	}
+
+	@media #{$medium-up} {
+		.logo {
+			.logo__text {
+				margin-top: 2.5em;
+			}
 		}
 	}
 	
 	@media #{$large-up} {
+		margin-bottom: 3em;
+		
 		.logo {
 			display: table;
 			text-align: left;

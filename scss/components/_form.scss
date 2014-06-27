@@ -1,0 +1,7 @@
+.required {
+	&:before {
+		margin-left: -0.3em;
+		content:"*";
+		color: red;
+	}
+}

@@ -1,0 +1,20 @@
+.module {
+	margin: 1em 0 2em;
+
+	h2 {
+		position: relative;
+		margin-bottom: 1em;
+		color: $gem-green;
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -0.25em;
+
+			background: $gem-green;
+			width: 75%;
+			height: 1px;
+		}
+	}
+}
