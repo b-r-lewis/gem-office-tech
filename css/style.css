@@ -7995,8 +7995,20 @@ a[href^="tel:"] {
   left: 0;
   bottom: -0.25em;
   background: #a3c536;
-  width: 75%;
+  width: 95%;
   height: 1px;
+}
+@media only screen and (min-width: 45.063em) and (max-width: 64em) {
+  /* line 9, ../scss/layout/_about.scss */
+  .module h2:after {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 64.063em) {
+  /* line 9, ../scss/layout/_about.scss */
+  .module h2:after {
+    width: 75%;
+  }
 }
 
 /* line 1, ../scss/layout/_content.scss */

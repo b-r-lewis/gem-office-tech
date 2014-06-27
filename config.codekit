@@ -11,6 +11,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/assets\/gem-logo-graphic-only.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23963,
+		"inputAbbreviatedPath": "\/assets\/gem-logo-graphic-only.png",
+		"outputAbbreviatedPath": "\/assets\/gem-logo-graphic-only.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/bower_components\/fastclick\/lib\/fastclick.js": {
 		"fileType": 64,
 		"ignore": 0,
