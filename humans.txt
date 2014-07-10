@@ -2,7 +2,17 @@
 /* zurb.com */
 /* humanstxt.org */
 
+                            
+/* TEAM */
+Your title: Brian Lewis 
+Site: brianrichardlewis.com
+Location: New Jersey
+		
+
 /* SITE */
-  Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
+Name: gemofficetech.com
+Launched: 2014-07-09
+Last Updated: 2014-07-09
+Standards: HTML5, CSS3
+Components: jQuery
+Software: Sublime Text 2, CodeKit, Git

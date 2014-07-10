@@ -1,0 +1,14 @@
+$white: #fff;
+$black: #222;
+// $gem-green: #a3c536; // option 1 (lighter)
+$gem-green: #92b131; // option 2 (darker)
+
+@import url(http://fonts.googleapis.com/css?family=Orbitron|Pathway+Gothic+One);
+
+@mixin font-stack-headers {
+	font-family: Orbitron, Pathway Gothic One, $body-font-family;
+}
+
+@mixin font-stack-body {
+	font-family: $body-font-family;
+}
