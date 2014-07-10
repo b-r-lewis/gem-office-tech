@@ -38,6 +38,10 @@
 
 // Global
 
+// User-defined
+// $gem-green: #a3c536; // option 1 (lighter)
+$gem-green: #92b131; // option 2 (darker)
+
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
@@ -1202,9 +1206,9 @@ $topbar-link-hover-lightness: -20%; // Darken by 20%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-hover: #272727;
 // $topbar-link-bg-active: $primary-color;
-$topbar-link-bg-active: #a3c536;
+$topbar-link-bg-active: $gem-green;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-$topbar-link-bg-active-hover: scale-color(#a3c536, $lightness: -20%);
+$topbar-link-bg-active-hover: scale-color($gem-green, $lightness: -20%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: $topbar-height / 3;

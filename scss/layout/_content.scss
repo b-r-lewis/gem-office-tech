@@ -25,12 +25,17 @@
 	display: table;
 	height: 200px;
 
+	text-align: center;
+
 	p {
-		display: table-cell;
+		// display: table-cell;
+		display: none;
 		vertical-align: center;
 	}
 }
 .manufacturer-list {
+
+	margin-bottom: 4em;
 
 	img {
 		max-height: 200px;

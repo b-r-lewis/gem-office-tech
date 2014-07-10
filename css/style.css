@@ -6081,12 +6081,12 @@ meta.foundation-mq-topbar {
 }
 /* line 343, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a {
-  background: #a3c536;
+  background: #92b131;
   color: white;
 }
 /* line 346, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a:hover {
-  background: #829e2b;
+  background: #758e27;
   color: white;
 }
 /* line 354, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
@@ -6278,11 +6278,11 @@ meta.foundation-mq-topbar {
     padding: 0 18px;
     line-height: 45px;
     color: white;
-    background: #a3c536;
+    background: #92b131;
   }
   /* line 494, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-    background: #829e2b;
+    background: #758e27;
   }
   /* line 503, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section .has-dropdown > a {
@@ -6408,7 +6408,7 @@ meta.foundation-mq-topbar {
   }
   /* line 624, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .no-js .top-bar-section ul li:active > a {
-    background: #a3c536;
+    background: #92b131;
     color: white;
   }
   /* line 632, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
@@ -7863,7 +7863,7 @@ body {
 
 /* line 49, ../scss/user/_typography.scss */
 em {
-  color: #a3c536;
+  color: #92b131;
   font-size: 1.1em;
   font-style: normal;
 }
@@ -7899,7 +7899,16 @@ a[href^="tel:"] {
   color: #222222;
 }
 
-/* line 2, ../scss/components/_form.scss */
+/* line 1, ../scss/components/_form.scss */
+form {
+  margin-bottom: 5em;
+}
+/* line 3, ../scss/components/_form.scss */
+form .form-type {
+  display: none;
+}
+
+/* line 9, ../scss/components/_form.scss */
 .required:before {
   margin-left: -0.3em;
   content: "*";
@@ -7951,10 +7960,10 @@ a[href^="tel:"] {
 .panel--simulator {
   border-style: solid;
   border-width: 1px;
-  border-color: #91af30;
+  border-color: #829e2c;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: #a3c536;
+  background: #92b131;
 }
 /* line 52, ../bower_components/foundation/scss/foundation/components/_panels.scss */
 .panel--simulator > :first-child {
@@ -7986,7 +7995,7 @@ a[href^="tel:"] {
 .module h2 {
   position: relative;
   margin-bottom: 1em;
-  color: #a3c536;
+  color: #92b131;
 }
 /* line 9, ../scss/layout/_about.scss */
 .module h2:after {
@@ -7994,7 +8003,7 @@ a[href^="tel:"] {
   position: absolute;
   left: 0;
   bottom: -0.25em;
-  background: #a3c536;
+  background: #92b131;
   width: 95%;
   height: 1px;
 }
@@ -8027,14 +8036,19 @@ a[href^="tel:"] {
   float: none;
   display: table;
   height: 200px;
+  text-align: center;
 }
-/* line 28, ../scss/layout/_content.scss */
+/* line 30, ../scss/layout/_content.scss */
 .manufacturer p {
-  display: table-cell;
+  display: none;
   vertical-align: center;
 }
 
-/* line 35, ../scss/layout/_content.scss */
+/* line 36, ../scss/layout/_content.scss */
+.manufacturer-list {
+  margin-bottom: 4em;
+}
+/* line 40, ../scss/layout/_content.scss */
 .manufacturer-list img {
   max-height: 200px;
   max-width: 300px;
@@ -8043,7 +8057,7 @@ a[href^="tel:"] {
 
 /* line 1, ../scss/layout/_footer.scss */
 footer {
-  background-color: #a3c536;
+  background-color: #92b131;
   padding: 2em 0;
   font-size: 0.8rem;
 }

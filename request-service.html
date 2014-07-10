@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -21,6 +20,7 @@
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
             <li><label>Sections</label></li>
+            <li><a href="/">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -61,6 +61,7 @@
                 <nav class="top-bar" role="navigation" data-topbar>
                   <section class="top-bar-section">
                     <ul class="left">
+                      <li><a href="/">Home</a></li>
                       <li><a href="products.html">Products</a></li>
                       <li><a href="about.html">About</a></li>
                       <li><a href="contact.html">Contact</a></li>
@@ -85,26 +86,28 @@
             <div class="row">
               <div class="large-12 columns">
 
-                <form>
-
+                <form id="contact-form" method="post" action="form.php" data-abide>
+                  <input type="text" name="form-type" id="form-type" value="request" class="form-type">
                   <div class="row">
                     <div class="large-8 medium-8 small-12 columns">
-                      <label class="required">Company
-                        <input type="text" placeholder="Company" />
+                      <label class="required"for="company">Company
+                        <input type="text" id="company" name="company" placeholder="Company" required>
+                        <small class="error">Company name required.</small>
                       </label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="large-8 medium-8 small-12 columns">
-                      <label>Customer ID
-                        <input type="text" placeholder="Account Number" />
+                      <label for="account">Account Number
+                        <input type="text" id="account" name="account" placeholder="Account Number" />
                       </label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="large-8 medium-8 small-12 columns">
-                      <label class="required">Please Describe Your Issue
-                        <textarea placeholder="Message" rows=6></textarea>
+                      <label class="required" for="message">Please Describe Your Issue
+                        <textarea id="message" name="message" placeholder="Message" rows=6 required></textarea>
+                        <small class="error">Message required.</small>
                       </label>
                     </div>
                   </div>
