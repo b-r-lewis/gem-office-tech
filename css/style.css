@@ -8035,24 +8035,34 @@ form .form-type {
   margin-right: auto;
   float: none;
   display: table;
-  height: 200px;
   text-align: center;
 }
-/* line 30, ../scss/layout/_content.scss */
-.manufacturer p {
-  display: none;
+@media only screen and (min-width: 64.063em) {
+  /* line 5, ../scss/layout/_content.scss */
+  .manufacturer {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 33.33333%;
+    float: left;
+  }
+}
+/* line 32, ../scss/layout/_content.scss */
+.manufacturer a {
+  display: table-cell;
   vertical-align: center;
 }
+/* line 37, ../scss/layout/_content.scss */
+.manufacturer img {
+  max-height: 200px;
+}
 
-/* line 36, ../scss/layout/_content.scss */
+/* line 41, ../scss/layout/_content.scss */
 .manufacturer-list {
   margin-bottom: 4em;
 }
-/* line 40, ../scss/layout/_content.scss */
+/* line 45, ../scss/layout/_content.scss */
 .manufacturer-list img {
-  max-height: 200px;
-  max-width: 300px;
-  margin-right: 2em;
+  max-height: 120px;
 }
 
 /* line 1, ../scss/layout/_footer.scss */

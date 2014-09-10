@@ -23,14 +23,19 @@
 	);
 
 	display: table;
-	height: 200px;
-
 	text-align: center;
 
-	p {
-		// display: table-cell;
-		display: none;
+	@media #{$large-up} {
+				@include grid-column( $columns:4 );
+	}
+
+	a {
+		display: table-cell;
 		vertical-align: center;
+	}
+	
+	img {
+		max-height: 200px;
 	}
 }
 .manufacturer-list {
@@ -38,9 +43,9 @@
 	margin-bottom: 4em;
 
 	img {
-		max-height: 200px;
-		max-width: 300px;
-		margin-right: 2em;
+		max-height: 120px;
+	// 	max-width: 300px;
+	// 	margin-right: 2em;
 	}
 
 }

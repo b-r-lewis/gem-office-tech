@@ -10,6 +10,7 @@ if ($_POST) {
 	// form-type >>> email to
 	// name >>> name
 	// company >>> company
+	// address >>> address
 	// phone >>> phone
 	// email >>> email from
 	// subject >>> subject
@@ -40,6 +41,7 @@ if ($_POST) {
 
 
 	$name =    trim(stripslashes($_POST['name']));
+	$address = trim(stripslashes($_POST['address']));
 	$company = trim(stripslashes($_POST['company']));
 	$phone =   trim(stripslashes($_POST['phone']));
 	$message = trim(stripslashes($_POST['message']));
@@ -72,6 +74,7 @@ if ($_POST) {
 	// prepare email body
 	$body = "";
 	$body .= ("" == $name) ? "" : "Name: $name\n";
+	$body .= ("" == $address) ? "" : "Adress: $address\n";
 	$body .= ("" == $company) ? "" : "Company: $company\n";
 	$body .= ("" == $phone) ? "" : "Tel: $phone\n";
 	$body .= ("" == $email_from) ? "" : "Email: $email_from\n";
