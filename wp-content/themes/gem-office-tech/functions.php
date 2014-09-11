@@ -1,7 +1,11 @@
 <?php
 
-if ( ! exists() ) :
+if ( ! function_exists( 'gem_setup' ) ) :
 function gem_setup() {
+
+	// This theme uses custom post types: 
+	// Milestone (ACF required)
+	require get_template_directory() . '/inc/custom-post-type-milestone.php';
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
