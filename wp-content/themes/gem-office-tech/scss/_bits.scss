@@ -1,0 +1,30 @@
+$green:  rgb( 125, 177, 49 );
+$purple: rgb( 41, 39, 101 );
+
+$black:      rgb( 31, 31, 31 );    // #1f1f1f
+$dark-gray:  rgb( 71, 71, 71 );    // #474747
+$gray:       rgb( 153, 153, 153 ); // #999
+$light-gray: rgb( 235, 235, 235 ); // #ebebeb
+$white:      rgb( 255, 255, 255 ); // #fff
+
+$padding: 8px;
+
+@mixin font-stack-headers {
+	font-family: Orbitron, Pathway Gothic One, sans-serif;
+}
+
+@mixin font-stack-body {
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
+}
+
+@mixin breakpoint( $point ) {
+	@if $point == medium {
+		@media (min-width: 45em) { @content; }
+	}
+	@if $point == large {
+		@media (min-width: 64em) { @content; }
+	}
+	@if $point == xlarge {
+		@media (min-width: 90em) { @content; }
+	}
+}

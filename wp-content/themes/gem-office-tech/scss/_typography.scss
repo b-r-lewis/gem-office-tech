@@ -1,0 +1,48 @@
+html {
+	@include font-stack-body;
+	font-size: 13px;
+	line-height: 1.5;
+	color: $black;
+
+	@include breakpoint(medium) {
+		font-size: 15px;
+	}
+
+	@include breakpoint(large) {
+		font-size: 17px;
+	}
+}
+
+a {
+	&:active { color: $black; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@include font-stack-headers;
+}
+
+h1 {
+	font-size: 1.7rem;
+	line-height: 1.2;
+	text-transform: uppercase;
+
+	@include breakpoint(medium) {
+		font-size: 2.1rem;
+	}
+
+	@include breakpoint(large) {
+		font-size: 2.5rem;
+	}
+}
+
+h2 {
+	font-size: 1.2rem;
+}
+
+h3 {
+	font-size: 1.2rem;
+}
+
+h4 {
+	font-size: 1.2rem;
+}
