@@ -1,0 +1,17 @@
+body {
+	background: $light-gray;
+	margin: 0;
+	padding: 0;
+}
+
+.page-wrap {
+	position: relative;
+	margin: 0 auto 40px;
+	// max-width: 1340px;
+}
+
+.header-wrap,
+.content-wrap,
+.footer-wrap {
+	margin: 0 auto;
+}

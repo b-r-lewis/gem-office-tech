@@ -1,0 +1,38 @@
+nav {
+	line-height: 1;
+}
+
+.main-nav {
+	background: $green;
+
+	a {
+		display: inline-block;
+		width: (95%/7);
+		height: 0%;
+		padding: $padding;
+		text-align: center;
+		vertical-align: middle;
+		&:hover {
+			background: $gray;
+		}
+	}
+}
+
+.e-auto-nav {
+	position: absolute;
+	top: $padding*2;
+	right: $padding;
+
+	a {
+		border: solid 3px $black;
+		color: $black;
+		padding: $padding*3 $padding;
+		margin: 5px;
+		text-decoration: none;
+
+		&:hover {
+			background: $black;
+			color: $light-gray;
+		}
+	}
+}

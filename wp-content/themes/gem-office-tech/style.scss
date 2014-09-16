@@ -14,4 +14,15 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import "scss/_bits.scss";
+@import url(http://fonts.googleapis.com/css?family=Orbitron|Pathway+Gothic+One);
+
+@import "scss/bits";
+@import "scss/typography";
+
+@import "scss/reset";
+
+@import "scss/layout";
+
+@import "scss/header";
+@import "scss/nav";
+@import "scss/footer"; 

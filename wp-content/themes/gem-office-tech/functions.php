@@ -19,5 +19,5 @@ function gem_setup() {
 	);
 
 }
-endif; // gem_setup
+endif; // end gem_setup
 add_action( 'after_setup_theme', 'gem_setup' );
