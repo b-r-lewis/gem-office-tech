@@ -1,13 +1,13 @@
 	  </main> <!-- END content-wrap -->
 	  
 		<footer class="footer-wrap">
-			<div class="company-info">
+			<!-- <div class="company-info">
 				<h4>GEM Office Technologies</h4>
 				<p>515 Valley Brooke Ave</p>
 				<p>Lyndhurst, NJ 07071</p>
 				<p>Office: <a href="tel:(201) 358-1605">(201) 358-1605</a></p>
 				<p>Fax: (201) 933-7533</p>
-			</div>
+			</div> -->
 
 			<?php
 
@@ -25,6 +25,8 @@
 				echo strip_tags( $nav_menu, '<nav><a>' );
 			
 			?>
+
+			<div class="copyright">© 2014 GEM Office Technologies.</div>
 		</footer>
 
 	</div> <!-- END page-wrap -->

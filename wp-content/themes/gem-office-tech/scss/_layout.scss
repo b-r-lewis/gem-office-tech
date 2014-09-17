@@ -1,3 +1,5 @@
+html { overflow-y: scroll; }
+
 body {
 	background: $light-gray;
 	margin: 0;
@@ -6,12 +8,57 @@ body {
 
 .page-wrap {
 	position: relative;
-	margin: 0 auto 40px;
-	// max-width: 1340px;
+	margin: $padding*5 auto 0;
 }
 
 .header-wrap,
+.nav-wrap,
 .content-wrap,
 .footer-wrap {
-	margin: 0 auto;
+	padding: 0 2vw;
+
+	@include breakpoint(medium) {
+		padding: 0 3vw;
+	}
+
+	@include breakpoint(large) {
+		padding: 0 5vw;
+	}
+
+	@include breakpoint(xlarge) {
+		padding: 0 8vw;
+	}
+}
+
+.content-wrap {
+	padding-top: $padding * 3;
+	padding-bottom: $padding * 5;
+
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.main-content,
+.side-content {
+	display: block;
+	float: left;
+	padding-right: $padding * 2;
+}
+
+.main-content {
+	float: left;
+	width: 66.6%;
+}
+
+.side-content {
+	float: left;
+	width: 33.3%;
+}
+
+.footer-wrap {
+	padding-top: $padding * 3;
+	padding-bottom: $padding * 5;
 }

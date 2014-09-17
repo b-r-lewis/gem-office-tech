@@ -1,0 +1,38 @@
+.timeline {
+
+	&__header,
+	&__footer {
+		@include bigify;
+	}
+}
+
+.milestone-wrap {
+	border-left: dotted 10px $dark-gray;
+}
+
+.milestone {
+	
+	width: 45%;
+	padding-left: $padding * 3;
+
+	margin-bottom: $padding*4;
+	
+	&__body {
+		background: $dark-gray;
+	}
+
+	&__year {
+		@include bigify;
+		background: $green;
+		padding: 0 $padding*2;
+		margin: 0;
+	}
+
+	&__content {
+		color: $white;
+		padding: $padding*3 $padding*2;
+		margin: 0;
+	}
+
+}
+

@@ -2,37 +2,62 @@ nav {
 	line-height: 1;
 }
 
+nav a {
+	color: $black;
+	text-decoration: none;
+}
+
 .main-nav {
 	background: $green;
+	border-top: solid 1px $dark-gray;
+	border-bottom: solid 1px $dark-gray;
+	display: flex;
 
 	a {
-		display: inline-block;
-		width: (95%/7);
-		height: 0%;
-		padding: $padding;
-		text-align: center;
-		vertical-align: middle;
+		display: table;
+		width: (96%/7);
+		height: 5em;
+		padding: $padding*2 $padding/2;
+
 		&:hover {
-			background: $gray;
+			background: $dark-green;
 		}
+
+		span {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+
 	}
 }
 
 .e-auto-nav {
 	position: absolute;
-	top: $padding*2;
-	right: $padding;
+	top: 0;
 
+	// a {
+	// 	border: solid 3px $black;
+	// 	display: inline-block;
+	// 	margin: $padding/2;
+	// 	padding: $padding*2 0;
+	// 	text-align: center;
+	// 	width: 6em;
+
+	// 	&:hover {
+	// 		background: $black;
+	// 		color: $light-gray;
+	// 	}
+	// }
+
+}
+
+.footer-nav {
+	margin-bottom: $padding * 2;
 	a {
-		border: solid 3px $black;
-		color: $black;
-		padding: $padding*3 $padding;
-		margin: 5px;
-		text-decoration: none;
-
+		margin-right: $padding * 2;
 		&:hover {
-			background: $black;
-			color: $light-gray;
+			text-decoration: underline;
 		}
 	}
 }

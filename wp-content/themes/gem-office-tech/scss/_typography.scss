@@ -14,7 +14,9 @@ html {
 }
 
 a {
+
 	&:active { color: $black; }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,27 +24,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 1.7rem;
+	font-size: 1.9em;
 	line-height: 1.2;
-	text-transform: uppercase;
 
 	@include breakpoint(medium) {
-		font-size: 2.1rem;
+		font-size: 2.2em;
 	}
 
 	@include breakpoint(large) {
-		font-size: 2.5rem;
+		font-size: 2.5em;
 	}
 }
 
 h2 {
-	font-size: 1.2rem;
-}
+	font-size: 1.2em;
 
-h3 {
-	font-size: 1.2rem;
+	@include breakpoint(medium) {
+		font-size: 1.4em;
+	}
+
+	@include breakpoint(large) {
+		font-size: 1.6em;
+	}
 }
 
 h4 {
-	font-size: 1.2rem;
+	font-size: 1.2em
+}
+
+nav {
+	font-weight: bold;
+}
+
+footer {
+	font-size: 0.8em;
+}
+
+@mixin bigify() {
+	font-size: 2em;
+	font-weight: 700;
 }

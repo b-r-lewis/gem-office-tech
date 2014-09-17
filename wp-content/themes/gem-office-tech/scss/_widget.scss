@@ -1,0 +1,23 @@
+.widget-wrap {
+	background: $green;
+
+	a { 
+			color: black;
+			text-decoration: none;
+		}
+
+}
+
+[class*='widget__'] {
+		padding: $padding*2;
+		text-align: center;
+		
+		p { 
+			margin: 0.5em 0 1em;
+			line-height: 1;
+		}
+
+		img {
+			width: 100%;
+		}
+}

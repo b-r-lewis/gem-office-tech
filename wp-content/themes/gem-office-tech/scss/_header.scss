@@ -1,5 +1,36 @@
-.header-wrap {}
+header {
+	a {
+		color: $black;
+		text-decoration: none;
+	}
 
-.tagline {
-	font-size: 1.8rem;
+	.title, .tagline {
+		margin: 0;
+	}
+}
+
+.header {
+	
+	display: table;
+
+	&__img, &__text {
+		display: table-cell;
+	}
+
+	&__img { text-align: center; }
+
+	&__text { vertical-align: middle; }
+
+}
+
+.header__img img {
+	width: 6em;
+
+	@include breakpoint(medium) {
+		width: 8em
+	}
+
+	@include breakpoint(large) {
+		width: 10em
+	}
 }
