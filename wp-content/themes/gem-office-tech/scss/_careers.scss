@@ -1,0 +1,54 @@
+.search-fields,
+.search-filters,
+.search-results {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.search-fields {
+	padding-top: $padding * 5; 
+}
+
+.search-filters {
+	background: $gray;
+	border-top: solid 2px $dark-gray;
+	font-size: 0.8em;
+	padding: $padding/2 $padding;
+}
+
+.search-filters input {
+	margin-right: $padding;
+}
+
+.search-filters label {
+	margin-right: $padding * 2;
+}
+
+.search-tags:before, 
+.search-fields:after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
+.search-keywords { float: left; }
+
+.search-locations { float: right; }
+
+.search-tags { display: block; }
+
+.search-keywords,
+.search-locations {
+	background: $gray;
+	width: 50%;
+	padding: $padding;
+}
+
+.search-keywords input,
+.search-locations input {
+	 width: 90%;
+}
+
+.search-results {
+	padding: $padding * 4 0;
+}

@@ -1,6 +1,10 @@
 <div class="side-content">
 	<?php
-		// Display Kyocera's control panel simulator on home page
+		/**
+		 * Kyocera CP Simulator
+		 *
+		 * Display on: home
+		 */
 		if ( is_home () ) : ?>
 			<div class="widget-wrap">
 				<a href="http://cp.kdaconnect.com/cp-simulator/" target="_blank">
@@ -12,5 +16,15 @@
 				</a>
 			</div>
 		<? endif;
+		
+		/**
+		 * Recently added posts
+		 *
+		 * Display on: single, single-job
+		 */
+		
+
 	?>
+
+
 </div>

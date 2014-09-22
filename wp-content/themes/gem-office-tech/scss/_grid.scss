@@ -1,0 +1,46 @@
+@mixin grid( $span, $columns ) {
+
+	padding: $padding $padding*4 $padding 0;
+	float: left;
+
+	width: 100%;
+
+	@include breakpoint(medium) {
+		@if $columns == 1 {
+			width: 100%;
+		}
+		@if $columns == 2 {
+			width: $span * 50%;
+		}
+		@if $columns == 3 {
+			width: $span * 33.3%;
+		}
+		@if $columns >= 4 {
+			width: $span * 25%;
+		}
+	}
+
+	@include breakpoint(medium) {
+		@if $columns == 1 {
+			width: 100%;
+		}
+		@if $columns == 2 {
+			width: $span * 50%;
+		}
+		@if $columns == 3 {
+			width: $span * 33.3%;
+		}
+		@if $columns == 4 {
+			width: $span * 25%;
+		}
+		@if $columns == 5 {
+			width: $span * 20%;
+		}
+		@if $columns == 6 {
+			width: $span * 16.6%;
+		}
+		@if $columns == 8 {
+			width: $span * 12.5%;
+		}
+	}
+}

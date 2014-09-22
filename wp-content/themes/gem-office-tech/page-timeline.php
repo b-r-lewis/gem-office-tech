@@ -15,6 +15,7 @@
 	?></p>
 
 	<div class="milestone-wrap">
+		<div class="timeline__path"></div>
 		<?php
 			$milestones = get_posts( array( 
 				'post_type'   => 'milestone',
@@ -31,6 +32,7 @@
 							<p class="milestone__year"><?php the_title(); ?></p>
 							<p class="milestone__content"><?php echo get_the_content(); ?></p>
 						</div>
+						<div class="milestone__indicator"></div>
 						<div class="milestone__img"></div>
 					</div>
 				<?php endforeach;

@@ -1,0 +1,17 @@
+.gem-solutions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.gem-solutions__img {
+	margin: 20px;
+	padding-bottom: 20px;
+}
+
+.gem-solutions__img img {
+	max-height: 200px;
+	max-width: 400px;
+}

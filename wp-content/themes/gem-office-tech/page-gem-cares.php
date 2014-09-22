@@ -5,10 +5,12 @@
 	 */
 
 	get_header(); the_post();
-
-	the_content();
 ?>
 
+<div class="main-content">
+	
+	<?php the_content(); ?>
 
+</div>
 
 <?php get_footer();

@@ -1,0 +1,44 @@
+.form-type {
+	display: none !important;
+}
+
+.contact-form {
+	margin-left: $padding * 5; 
+	
+	.row {
+		margin-bottom: $padding * 2;
+	}
+
+	input,
+	textarea {
+		display: block;
+	}
+
+	input {
+		padding: $padding;
+		width: 60%;
+	}
+
+	textarea {
+		width: 60%;
+	}
+
+	button {
+		padding: $padding $padding*2;
+	}
+
+	.required {
+		position: relative;
+	}
+
+	.required::before {
+		content: "*";
+		color: red;
+		position: absolute;
+		top: 0;
+		left: -12px;
+	}
+
+	.error { display: none; color: red; }
+
+}

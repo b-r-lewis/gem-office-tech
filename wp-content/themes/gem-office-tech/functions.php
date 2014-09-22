@@ -5,6 +5,7 @@ function pre_gem_setup() {
 
 	register_taxonomy_for_object_type( 'category', 'attachment' );
 	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+	// register_taxonomy{ 'category', 'job-posting' };
 
 }
 endif; // end pre_gem_setup
@@ -18,6 +19,8 @@ function gem_setup() {
 	// This theme uses custom post types: 
 	// Milestone (ACF required)
 	require get_template_directory() . '/inc/custom-post-type-milestone.php';
+
+	require get_template_directory() . '/inc/custom-post-type-job-posting.php';
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
@@ -40,11 +43,30 @@ function gem_setup() {
 	);
 
 	// This theme uses a custom wp_nav_menu walker
-	// require get_template_directory() . '/inc/custom-main-nav-walker.php';
+	require get_template_directory() . '/inc/custom-main-nav-walker.php';
 
-	register_taxonomy_for_object_type( 'category', 'attachment' );
-	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+	// register_taxonomy_for_object_type( 'category', 'attachment' );
+	// register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 
 }
 endif; // end gem_setup
 add_action( 'after_setup_theme', 'gem_setup' );
+
+if ( ! function_exists( 'gem_script_setup') ) :
+function gem_script_setup() {
+	// use Google's jquery
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', 
+				'//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
+	
+	wp_register_script( 'custom-script',
+				get_template_directory_uri().'/js/script.js',
+				array('jquery'),
+				1.0,
+				true );
+	wp_enqueue_script( 'custom-script' );
+
+}
+endif;
+add_action( 'wp_footer', 'gem_script_setup' );
+

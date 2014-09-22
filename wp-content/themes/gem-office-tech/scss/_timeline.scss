@@ -1,28 +1,64 @@
 .timeline {
+	// position: relative;
+}
 
-	&__header,
-	&__footer {
-		@include bigify;
+.timeline__header,
+.timeline__footer {
+	@include bigify;
+	text-align: center;
+	font-style: italic;
+}
+
+.timeline__path {
+	position: absolute;
+	z-index: -100;
+	border-right: dotted 5px black;
+
+	@include breakpoint(medium) {
+		height: 100%;
+		width: 51.5%;
+	}
+
+	@include breakpoint(large) {
+		width: 51.5%;
+	}
+
+	@include breakpoint(xlarge) {
+		width: 51.5%;
 	}
 }
 
 .milestone-wrap {
-	border-left: dotted 10px $dark-gray;
+	position: relative;
 }
 
 .milestone {
-	
-	width: 45%;
-	padding-left: $padding * 3;
+	display: block;
+	margin-bottom: $padding * 4;
 
-	margin-bottom: $padding*4;
+	@include breakpoint(medium) {
+		display: flex;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__body,
+	&__img {
+		width: 100%;
+		margin-bottom: $padding * 3;
+		@include breakpoint(medium) {width: 45%; }
+	}
 	
 	&__body {
 		background: $dark-gray;
+		
+		order: 1;
 	}
 
 	&__year {
 		@include bigify;
+		font-style: italic;
 		background: $green;
 		padding: 0 $padding*2;
 		margin: 0;
@@ -32,6 +68,54 @@
 		color: $white;
 		padding: $padding*3 $padding*2;
 		margin: 0;
+	}
+
+	&__indicator {
+		display: none;
+
+		@include breakpoint(medium) {
+			display: block;
+			background: $dark-gray;
+			width: $padding * 4;
+			height: $padding * 4;
+			border-radius: 50%;
+
+			order: 2;
+
+			position: relative;
+
+			&:after {
+				content: " ";
+				position: absolute;
+				z-index: -10;
+
+				top: -$padding;
+				left: -$padding;
+
+				background: $green;
+				width: $padding * 6;
+				height: $padding * 6;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&__img {
+		background: $green;
+		height: 300px;
+		
+		order: 3;
+	}
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	&:nth-of-type(2n - 1) {
+		.milestone__body { order: 3; }
+		.milestone__img  { order: 1; }
 	}
 
 }

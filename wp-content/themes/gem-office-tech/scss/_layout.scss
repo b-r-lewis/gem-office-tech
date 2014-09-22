@@ -1,18 +1,20 @@
 html { overflow-y: scroll; }
 
 body {
-	background: $light-gray;
+	background: $white;
 	margin: 0;
 	padding: 0;
 }
 
 .page-wrap {
 	position: relative;
-	margin: $padding*5 auto 0;
+	margin: 0 auto;
+	padding-top: $padding * 8;
 }
 
 .header-wrap,
 .nav-wrap,
+.e-auto-wrap,
 .content-wrap,
 .footer-wrap {
 	padding: 0 2vw;
@@ -26,39 +28,37 @@ body {
 	}
 
 	@include breakpoint(xlarge) {
-		padding: 0 8vw;
+		padding: 0 10vw;
 	}
+}
+
+.e-auto-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .content-wrap {
-	padding-top: $padding * 3;
+	padding-top: $padding * 8;
 	padding-bottom: $padding * 5;
-
-	&::after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-}
-
-.main-content,
-.side-content {
-	display: block;
-	float: left;
-	padding-right: $padding * 2;
 }
 
 .main-content {
-	float: left;
-	width: 66.6%;
+	@include grid(2,3);
 }
 
 .side-content {
-	float: left;
-	width: 33.3%;
+	@include grid(1,3);
+
 }
 
 .footer-wrap {
 	padding-top: $padding * 3;
-	padding-bottom: $padding * 5;
+	padding-bottom: $padding * 10;
+}
+
+[class*="-wrap"]::after {
+	content: "";
+	clear: both;
+	display: table;
 }

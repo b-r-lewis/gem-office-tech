@@ -1,12 +1,18 @@
 header {
 	a {
 		color: $black;
-		text-decoration: none;
 	}
 
 	.title, .tagline {
 		margin: 0;
 	}
+
+	.title { text-transform: uppercase; }
+
+	.tagline {
+		font-size: 1.5em;
+	}
+
 }
 
 .header {
@@ -33,4 +39,8 @@ header {
 	@include breakpoint(large) {
 		width: 10em
 	}
+}
+
+.page-title .first-letter {
+	color: red;
 }

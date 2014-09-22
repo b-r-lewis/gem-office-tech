@@ -2,48 +2,40 @@
 
 <div class="main-content">
 
-	<?php
-		query_posts( array('posts_per_page' => 1) );
-		if ( have_posts() ): ?>
-			<h3>Latest News</h3>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<div class="entry"> <?php the_content(); ?></div>
-				</article>
-			<?php endwhile;
-		endif; ?>
 
 	<?php
-		$banner_images = get_posts( array( 'category' => 'slider', 'post_type' => 'attachment' ) );
+		$banner_images = get_posts( array( 'category_name' => 'slider', 'post_type' => 'attachment', 'posts_per_page' => 1 ) );
 		if ( $banner_images ) : ?>
 			<div class="banner">
 					<ul class="slider">
 					<?php foreach ( $banner_images as $image ) : ?>
-						<li><?php wp_get_attachment_image( $image->ID ) ?></li>
+						<li>
+							<img src="<?php echo wp_get_attachment_url( $image->ID ); ?>">
+						</li>
 					<?php endforeach; ?>
 					</ul>
 			</div>
 		<?php endif; ?>
 
-
 	<?php
-		query_posts( array('posts_per_page' => 5, 'offset' => 1) );
-		if ( have_posts() ) : ?>
-			<h3>More news from GEM</h3>
-			<?php while ( have_posts() ): the_post(); ?>
-			
-				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<div class="entry"> <?php the_content(); ?></div>
-				</article>
-
+		query_posts( array('posts_per_page' => 5) );
+		if ( have_posts() ): ?>
+			<h3>Latest News</h3>
+			<ul class="slider">
+			<?php while ( have_posts() ) : the_post(); ?>
+				<li>
+					<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						<div class="entry"> <?php the_content(); ?></div>
+					</article>
+				</li>
 			<?php endwhile; ?>
-			
-			<a href="/">View older news</a>
+			</ul>
+		<?php else: ?>
+			<h3>No news posts</h3>
+		<?php endif; ?>
 
-		<?php endif;
-	?>
+	
 
 </div>
 

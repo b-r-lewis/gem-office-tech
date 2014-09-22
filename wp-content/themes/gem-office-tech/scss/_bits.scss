@@ -5,7 +5,7 @@ $purple-alt: rgb( 101, 49, 177 ); // #6531b1
 $blue:       rgb( 49, 125, 177);  // #317db1
 
 $black:      rgb( 31, 31, 31 );    // #1f1f1f
-$dark-gray:  rgb( 71, 71, 71 );    // #474747
+$dark-gray:  rgb( 68, 68, 68 );    // #333
 $gray:       rgb( 153, 153, 153 ); // #999
 $light-gray: rgb( 235, 235, 235 ); // #ebebeb
 $white:      rgb( 255, 255, 255 ); // #fff
@@ -13,7 +13,7 @@ $white:      rgb( 255, 255, 255 ); // #fff
 $padding: 8px;
 
 @mixin font-stack-headers {
-	font-family: Open Sans, Arial, sans-serif;
+	font-family: Orbitron, Pathway Gothic One, Open Sans, Arial, sans-serif;
 }
 
 @mixin font-stack-body {
@@ -21,11 +21,14 @@ $padding: 8px;
 }
 
 @mixin breakpoint( $point ) {
+	@if $point == small-only {
+		@media (max-width: 45em) { @content; }
+	}
 	@if $point == medium {
 		@media (min-width: 45em) { @content; }
 	}
 	@if $point == large {
-		@media (min-width: 70em) { @content; }
+		@media (min-width: 60em) { @content; }
 	}
 	@if $point == xlarge {
 		@media (min-width: 85em) { @content; }
