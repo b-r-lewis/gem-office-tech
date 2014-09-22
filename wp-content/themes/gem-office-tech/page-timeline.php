@@ -33,7 +33,11 @@
 							<p class="milestone__content"><?php echo get_the_content(); ?></p>
 						</div>
 						<div class="milestone__indicator"></div>
-						<div class="milestone__img"></div>
+						<div class="milestone__img">
+							<?php if( has_post_thumbnail() ) : ?>
+								<?php the_post_thumbnail(); ?>
+							<?php endif; ?>
+						</div>
 					</div>
 				<?php endforeach;
 			endif;

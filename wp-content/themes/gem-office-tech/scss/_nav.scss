@@ -13,31 +13,6 @@ nav a {
 	display: flex;
 	font-size: 0;
 	position: relative;
-
-	// a {
-	// 	align-self: center;
-	// 	display: table;
-	// 	color: $white;
-	// 	text-align: center;
-	// 	width: (100%/7);
-
-	// 	&:active {
-	// 		color: $green;
-	// 	}
-
-	// 	&:hover {
-	// 		background: $black;
-	// 	}
-
-	// 	span {
-	// 		display: table-cell;
-	// 		vertical-align: middle;
-
-	// 		font-size: 1rem;
-	// 		height: 3em;
-	// 	}
-	// }
-
 }
 
 [class*="main-nav__link"] {
@@ -63,8 +38,6 @@ nav a {
 	background: $green;
 
 	&:hover { background: $dark-green; }
-
-	
 }
 
 .main-nav__link--has-active-sub {

@@ -1,5 +1,5 @@
 .timeline {
-	// position: relative;
+	position: relative;
 }
 
 .timeline__header,
@@ -9,13 +9,17 @@
 	font-style: italic;
 }
 
+.timeline__header { margin-bottom: 2em; }
+.timeline__footer { margin-top: 2em; }
+
 .timeline__path {
 	position: absolute;
+	top: -2.5rem;
 	z-index: -100;
 	border-right: dotted 5px black;
 
 	@include breakpoint(medium) {
-		height: 100%;
+		height: 102%;
 		width: 51.5%;
 	}
 
@@ -40,83 +44,90 @@
 		display: flex;
 		-webkit-justify-content: space-between;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
 	}
 
-	&__body,
-	&__img {
+}
+
+.milestone__body,
+.milestone__img {
 		width: 100%;
 		margin-bottom: $padding * 3;
-		@include breakpoint(medium) {width: 45%; }
+		@include breakpoint(medium) { width: 45%; }
 	}
 	
-	&__body {
+.milestone__body {
 		background: $dark-gray;
 		
 		order: 1;
 	}
 
-	&__year {
+.milestone__year {
 		@include bigify;
 		font-style: italic;
 		background: $green;
-		padding: 0 $padding*2;
+		padding: $padding/2 $padding*2;
 		margin: 0;
 	}
 
-	&__content {
-		color: $white;
-		padding: $padding*3 $padding*2;
-		margin: 0;
-	}
+.milestone__content {
+	color: $white;
+	padding: $padding*3 $padding*2;
+	margin: 0;
+}
 
-	&__indicator {
-		display: none;
+.milestone__indicator {
+	display: none;
 
-		@include breakpoint(medium) {
-			display: block;
-			background: $dark-gray;
-			width: $padding * 4;
-			height: $padding * 4;
+	@include breakpoint(medium) {
+		display: block;
+		background: $dark-gray;
+		width: $padding * 4;
+		height: $padding * 4;
+		border-radius: 50%;
+
+		order: 2;
+
+		margin-top: 1rem;
+
+		position: relative;
+
+		&:after {
+			content: " ";
+			position: absolute;
+			z-index: -10;
+
+			top: -$padding;
+			left: -$padding;
+
+			background: $green;
+			width: $padding * 6;
+			height: $padding * 6;
 			border-radius: 50%;
-
-			order: 2;
-
-			position: relative;
-
-			&:after {
-				content: " ";
-				position: absolute;
-				z-index: -10;
-
-				top: -$padding;
-				left: -$padding;
-
-				background: $green;
-				width: $padding * 6;
-				height: $padding * 6;
-				border-radius: 50%;
-			}
 		}
 	}
+}
 
-	&__img {
-		background: $green;
-		height: 300px;
-		
-		order: 3;
+.milestone__img {
+	order: 3;
+
+	text-align: center;
+
+	img {
+		max-width: 100%;
+		height: auto;
 	}
+}
 
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
 
-	&:nth-of-type(2n - 1) {
+.milestone:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.milestone:nth-of-type(2n - 1) {
 		.milestone__body { order: 3; }
 		.milestone__img  { order: 1; }
-	}
-
 }
 

@@ -511,6 +511,23 @@ nav a {
 .search-results {
   padding: 32px 0; }
 
+.gem-solutions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+
+.gem-solutions__img {
+  margin: 20px;
+  padding-bottom: 20px; }
+
+.gem-solutions__img img {
+  max-height: 200px;
+  max-width: 400px; }
+
+.timeline {
+  position: relative; }
+
 .timeline__header,
 .timeline__footer {
   font-size: 2em;
@@ -518,13 +535,20 @@ nav a {
   text-align: center;
   font-style: italic; }
 
+.timeline__header {
+  margin-bottom: 2em; }
+
+.timeline__footer {
+  margin-top: 2em; }
+
 .timeline__path {
   position: absolute;
+  top: -2.5rem;
   z-index: -100;
   border-right: dotted 5px black; }
   @media (min-width: 45em) {
     .timeline__path {
-      height: 100%;
+      height: 102%;
       width: 51.5%; } }
   @media (min-width: 60em) {
     .timeline__path {
@@ -544,57 +568,70 @@ nav a {
       display: flex;
       -webkit-justify-content: space-between;
       justify-content: space-between;
-      align-items: center; } }
-  .milestone__body, .milestone__img {
-    width: 100%;
-    margin-bottom: 24px; }
-    @media (min-width: 45em) {
-      .milestone__body, .milestone__img {
-        width: 45%; } }
-  .milestone__body {
-    background: #444444;
-    order: 1; }
-  .milestone__year {
-    font-size: 2em;
-    font-weight: 700;
-    font-style: italic;
-    background: #7db131;
-    padding: 0 16px;
-    margin: 0; }
-  .milestone__content {
-    color: white;
-    padding: 24px 16px;
-    margin: 0; }
-  .milestone__indicator {
-    display: none; }
-    @media (min-width: 45em) {
-      .milestone__indicator {
-        display: block;
-        background: #444444;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        order: 2;
-        position: relative; }
-        .milestone__indicator:after {
-          content: " ";
-          position: absolute;
-          z-index: -10;
-          top: -8px;
-          left: -8px;
-          background: #7db131;
-          width: 48px;
-          height: 48px;
-          border-radius: 50%; } }
-  .milestone__img {
-    background: #7db131;
-    height: 300px;
-    order: 3; }
-  .milestone:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .milestone:nth-of-type(2n - 1) .milestone__body {
-    order: 3; }
-  .milestone:nth-of-type(2n - 1) .milestone__img {
-    order: 1; }
+      align-items: flex-start; } }
+
+.milestone__body,
+.milestone__img {
+  width: 100%;
+  margin-bottom: 24px; }
+  @media (min-width: 45em) {
+    .milestone__body,
+    .milestone__img {
+      width: 45%; } }
+
+.milestone__body {
+  background: #444444;
+  order: 1; }
+
+.milestone__year {
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+  background: #7db131;
+  padding: 4px 16px;
+  margin: 0; }
+
+.milestone__content {
+  color: white;
+  padding: 24px 16px;
+  margin: 0; }
+
+.milestone__indicator {
+  display: none; }
+  @media (min-width: 45em) {
+    .milestone__indicator {
+      display: block;
+      background: #444444;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      order: 2;
+      margin-top: 1rem;
+      position: relative; }
+      .milestone__indicator:after {
+        content: " ";
+        position: absolute;
+        z-index: -10;
+        top: -8px;
+        left: -8px;
+        background: #7db131;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%; } }
+
+.milestone__img {
+  order: 3;
+  text-align: center; }
+  .milestone__img img {
+    max-width: 100%;
+    height: auto; }
+
+.milestone:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.milestone:nth-of-type(2n - 1) .milestone__body {
+  order: 3; }
+.milestone:nth-of-type(2n - 1) .milestone__img {
+  order: 1; }

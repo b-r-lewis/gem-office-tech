@@ -14,23 +14,23 @@ class custom_main_nav_walker extends Walker_Nav_Menu {
 
 	function end_lvl ( &$output, $depth = 0, $args = array() ) {
 		$this->is_child = false;
-		$output .= "</div>";
+		$output .= '</div>';
 	}
 
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
 		if ( $this->right_after_parent ) {
-			$output .= "<div class=\"main-nav__sub-list ";
-			$output .= $this->current_parent . "__sub ";
+			$output .= '<div class="main-nav__sub-list ';
+			$output .= 'nav-' . $this->current_parent . '__sub ';
 
-			( $this->current_parent_is_active ) ? $this->current_parent_is_active = false : $output .= "is-hidden";
+			( $this->current_parent_is_active ) ? $this->current_parent_is_active = false : $output .= 'is-hidden';
 
-			$output .= "\">";	
+			$output .= '">';	
 			$this->right_after_parent = false;
 			$this->is_child = true;
 		}
 
-		$class_names = "";
+		$class_names = '';
 		$all_classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes = array( '' );
 
@@ -39,7 +39,7 @@ class custom_main_nav_walker extends Walker_Nav_Menu {
 			$is_current = in_array( 'current-menu-item', $all_classes );
 
 			$classes[0] = $is_parent ? 'main-nav__link--has-sub' : 'main-nav__link';
-			$classes[1] = $all_classes[0];
+			$classes[1] = 'nav-' . $all_classes[0];
 			$classes[2] = $is_current ? 'current' : '';
 			if ( $is_parent && $is_current ) {
 				$classes[3] = 'main-nav__link--has-active-sub';
@@ -49,9 +49,10 @@ class custom_main_nav_walker extends Walker_Nav_Menu {
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
     $class_names = strlen( trim( $class_names ) ) > 0 ? ' class="' . esc_attr( $class_names ) . '"' : '';
-		$attributes = ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+		$attributes = ! empty( $item->url )    ? ' href="'   . esc_attr( $item->url )    . '"' : '';
+		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
 
-		$output .= "<a " . $class_names . " ";
+		$output .= '<a ' . $class_names . ' ';
 		$output .= $attributes;
 		$output .= "><span>$item->title";
 
@@ -63,7 +64,7 @@ class custom_main_nav_walker extends Walker_Nav_Menu {
 	}
 
 	function end_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		$output .= "</span></a>";
+		$output .= '</span></a>';
 		// $this->right_after_parent = false;
 	}
 
