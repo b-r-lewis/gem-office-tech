@@ -1,6 +1,15 @@
+@mixin grid-container() {
+	&::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+
 @mixin grid( $span, $columns ) {
 
-	padding: $padding $padding*4 $padding 0;
+	// padding-top: $padding;
+	padding-right: $padding * 2;
 	float: left;
 
 	width: 100%;

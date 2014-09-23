@@ -1,12 +1,13 @@
-.search-fields,
-.search-filters,
+.search-wrap,
 .search-results {
 	width: 80%;
 	margin: 0 auto;
 }
 
+.search-wrap { padding: $padding * 3 0; }
+
 .search-fields {
-	padding-top: $padding * 5; 
+	margin-top: $padding * 2; 
 }
 
 .search-filters {
@@ -50,5 +51,41 @@
 }
 
 .search-results {
-	padding: $padding * 4 0;
+	padding: $padding * 5 0;
+}
+
+.job-profile,
+.job-profile--headers {
+	@include grid-container();
+	padding: 0.5em 0;
+}
+
+.job-profile--headers,
+.job-profile:nth-of-type(2n-1) {
+	background: $light-gray;
+}
+
+.job-profile--headers {
+	font-weight: bold;
+}
+
+[class*="job-profile__"] {
+	@include grid(1,6);
+	display: inline-block;
+
+	font-size: 1rem;
+}
+
+.job-profile__title {
+	@include grid(2,6);
+}
+
+.job-profile__view a {
+	color: $white;
+	padding: 5px 10px;
+	margin: 0 auto;
+	background-color: $green;
+	// border-radius: 4px;
+
+	&:hover { background-color: $dark-green }
 }
