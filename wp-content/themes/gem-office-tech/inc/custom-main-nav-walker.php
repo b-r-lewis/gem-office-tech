@@ -36,7 +36,11 @@ class custom_main_nav_walker extends Walker_Nav_Menu {
 
 		if ( !$this->is_child ) {
 			$is_parent = in_array( 'menu-item-has-children', $all_classes );
-			$is_current = in_array( 'current-menu-item', $all_classes );
+			$is_current = false;
+			 if ( in_array( 'current-menu-item', $all_classes ) ||  
+			 			in_array( 'current-menu-parent', $all_classes ) ) {
+			 				$is_current = true;
+			 			}
 
 			$classes[0] = $is_parent ? 'main-nav__link--has-sub' : 'main-nav__link';
 			$classes[1] = 'nav-' . $all_classes[0];

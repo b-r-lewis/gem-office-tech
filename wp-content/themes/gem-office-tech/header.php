@@ -8,6 +8,9 @@
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+	<? if ( is_home() ) : ?>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
+	<?php endif; ?>
 </head>
 
 <body>

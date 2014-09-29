@@ -1,3 +1,5 @@
+// General Navigation styles --------------------
+
 nav {
 	line-height: 1;
 }
@@ -6,6 +8,10 @@ nav a {
 	color: $black;
 	text-decoration: none;
 }
+
+
+
+// Main Navigation Menu styles --------------------
 
 .main-nav {
 	background: $dark-gray;
@@ -44,23 +50,11 @@ nav a {
 	background: $black;
 	position: relative;
 
-	// &::after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	height: 0.5rem;
-	// 	width: 100%;
-	// 	left: 0;
-	// 	bottom: 0;
-	// 	background: $blue;
-	// }
-
 	&::after {
 		content: "";
 		position: absolute;
 		bottom: -0.7rem;
 		left: calc(50% - 1rem);
-		// height: 20px;
-		// width: 50px;
 		border-top: solid 0.75rem $black;
 		border-right: solid 1rem transparent;
 		border-left: solid 1rem transparent;
@@ -69,11 +63,7 @@ nav a {
 
 	&.current::after { border-top-color: $green;}
 	&.current:hover::after { border-top-color: $dark-green; }
-
 }
-
-// .main-nav__link--has-active-sub.current::after { border-top-color: $green;}
-// .main-nav__link--has-active-sub.current::after { border-top-color: $green;}
 
 
 .main-nav__sub-list {
@@ -100,13 +90,21 @@ nav a {
 			background: none;
 		}
 	}
-	
-
 }
+
+.nav-cares {
+	background: $green;
+
+	&:hover { background: $dark-green; }
+}
+
+.nav-mdpc  { background: $mdpc; }
 
 .is-hidden { visibility: hidden; }
 
 
+
+// E-Automate Menu styles --------------------
 
 .e-auto-wrap {
 	width: 100%;
@@ -132,10 +130,11 @@ nav a {
 			background: $black;
 		}
 	}
-
-
-
 }
+
+
+
+// Footer Navigation styles --------------------
 
 .footer-nav {
 	margin-bottom: $padding * 4;
@@ -153,6 +152,5 @@ nav a {
 		&:hover {
 			text-decoration: underline;
 		}
-
 	}
 }

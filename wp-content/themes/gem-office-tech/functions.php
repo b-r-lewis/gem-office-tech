@@ -52,13 +52,23 @@ function gem_setup() {
 endif; // end gem_setup
 add_action( 'after_setup_theme', 'gem_setup' );
 
+
+
 if ( ! function_exists( 'gem_script_setup') ) :
 function gem_script_setup() {
 	// use Google's jquery
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 
 				'//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
-	
+
+	wp_register_script( 'slick-script',
+				'//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js',
+				array('jquery'),
+				true );
+	// if ( is_home() ) :
+		wp_enqueue_script( 'slick-script' );
+	// endif;
+
 	wp_register_script( 'custom-script',
 				get_template_directory_uri().'/js/script.js',
 				array('jquery'),

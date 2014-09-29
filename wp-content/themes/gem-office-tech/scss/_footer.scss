@@ -1,7 +1,15 @@
-footer {
-	// background: $green;
-}
-
 .footer-wrap {
 	background: $green;
+}
+
+.locations {
+	margin-bottom: $padding * 2;
+}
+
+[class*="location__"] {
+	margin-bottom: $padding;
+}
+
+.country-name {
+	display: none;
 }
