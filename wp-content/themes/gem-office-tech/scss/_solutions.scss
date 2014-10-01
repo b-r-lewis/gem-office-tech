@@ -15,3 +15,23 @@
 	max-height: 200px;
 	max-width: 400px;
 }
+
+
+
+
+[class*="--youtube"] {
+	margin-bottom: 5em;
+}
+
+.youtube,
+[class*="--youtube"] iframe {
+	width: 20em;
+	height: 13em;
+
+	@include breakpoint(medium) {
+		width: 30em;
+		height: 20em;
+	}
+}
+
+

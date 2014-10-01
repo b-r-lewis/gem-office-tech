@@ -45,9 +45,6 @@ function gem_setup() {
 	// This theme uses a custom wp_nav_menu walker
 	require get_template_directory() . '/inc/custom-main-nav-walker.php';
 
-	// register_taxonomy_for_object_type( 'category', 'attachment' );
-	// register_taxonomy_for_object_type( 'post_tag', 'attachment' );
-
 }
 endif; // end gem_setup
 add_action( 'after_setup_theme', 'gem_setup' );
@@ -59,15 +56,9 @@ function gem_script_setup() {
 	// use Google's jquery
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 
-				'//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
+				'//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', true);
+	wp_enqueue_script( 'jquery' );
 
-	wp_register_script( 'slick-script',
-				'//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js',
-				array('jquery'),
-				true );
-	// if ( is_home() ) :
-		wp_enqueue_script( 'slick-script' );
-	// endif;
 
 	wp_register_script( 'custom-script',
 				get_template_directory_uri().'/js/script.js',
@@ -75,6 +66,29 @@ function gem_script_setup() {
 				1.0,
 				true );
 	wp_enqueue_script( 'custom-script' );
+
+	if ( is_home() ) :
+		wp_register_script( 'slick-script',
+				'//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js',
+				array('jquery'),
+				true );
+		wp_register_script( 'custom-slick',
+				get_template_directory_uri().'/js/custom-slick.js',
+				array('jquery'),
+				1.0,
+				true );
+		wp_enqueue_script( 'slick-script' );
+		wp_enqueue_script( 'custom-slick' );
+	endif;
+
+	if ( is_page( 'Verticals' ) ) :
+		wp_register_script( 'youtube-embed',
+				'//labnol.googlecode.com/files/youtube.js',
+				array('jquery'),
+				1.0,
+				true );
+		wp_enqueue_script( 'youtube-embed' );
+	endif;
 
 }
 endif;

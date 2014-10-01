@@ -23,7 +23,8 @@
 		width: 60%;
 	}
 
-	button {
+	input[type="submit"] {
+		width: 30%;
 		padding: $padding $padding*2;
 	}
 

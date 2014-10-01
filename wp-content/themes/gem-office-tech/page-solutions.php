@@ -1,7 +1,7 @@
 <?php 
 
 	/**
-	 * Template Name: Solutions
+	 * Template Name: Partners
 	 */
 
 get_header(); the_post(); ?>

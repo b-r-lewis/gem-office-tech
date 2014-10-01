@@ -4,7 +4,7 @@
 	 * Template Name: Contact
 	 */
 
-get_header(); ?>
+get_header(); the_post(); ?>
 
 <form id="contact-form" class="contact-form">
     <input type="text" name="form-type" id="form-type" value="contact" class="form-type">

@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".slick-banner").slick({autoplay:!0,autoplaySpeed:1e4,dots:!0,infinite:!0}),$(".slick-news").slick({autoplay:!0,autoplaySpeed:15e3,dots:!0,infinite:!0,slide:"article"})});
