@@ -175,7 +175,9 @@ $(document).ready( function() {
 		lastClicked = false,
 		menu = $('#adminmenu'),
 		pageInput = $('input.current-page'),
-		currentPage = pageInput.val();
+		currentPage = pageInput.val(),
+		isIOS = /iPhone|iPad|iPod/.test( navigator.userAgent ),
+		isAndroid = navigator.userAgent.indexOf( 'Android' ) !== -1;
 
 	// when the menu is folded, make the fly-out submenu header clickable
 	menu.on('click.wp-submenu-head', '.wp-submenu-head', function(e){
@@ -224,7 +226,7 @@ $(document).ready( function() {
 
 	if ( 'ontouchstart' in window || /IEMobile\/[1-9]/.test(navigator.userAgent) ) { // touch screen device
 		// iOS Safari works with touchstart, the rest work with click
-		mobileEvent = /Mobile\/.+Safari/.test(navigator.userAgent) ? 'touchstart' : 'click';
+		mobileEvent = isIOS ? 'touchstart' : 'click';
 
 		// close any open submenus when touch/click is not on the menu
 		$(document.body).on( mobileEvent+'.wp-mobile-hover', function(e) {
@@ -282,73 +284,75 @@ $(document).ready( function() {
 		});
 	}
 
-	menu.find('li.wp-has-submenu').hoverIntent({
-		over: function() {
-			var b, h, o, f, m = $(this).find('.wp-submenu'), menutop, wintop, maxtop, top = parseInt( m.css('top'), 10 );
+	if ( ! isIOS && ! isAndroid ) {
+		menu.find('li.wp-has-submenu').hoverIntent({
+			over: function() {
+				var b, h, o, f, m = $(this).find('.wp-submenu'), menutop, wintop, maxtop, top = parseInt( m.css('top'), 10 );
 
-			if ( isNaN(top) || top > -5 ) { // meaning the submenu is visible
-				return;
-			}
+				if ( isNaN(top) || top > -5 ) { // meaning the submenu is visible
+					return;
+				}
 
+				if ( menu.data('wp-responsive') ) {
+					// The menu is in responsive mode, bail
+					return;
+				}
+
+				menutop = $(this).offset().top;
+				wintop = $(window).scrollTop();
+				maxtop = menutop - wintop - 30; // max = make the top of the sub almost touch admin bar
+
+				b = menutop + m.height() + 1; // Bottom offset of the menu
+				h = $('#wpwrap').height(); // Height of the entire page
+				o = 60 + b - h;
+				f = $(window).height() + wintop - 15; // The fold
+
+				if ( f < (b - o) ) {
+					o = b - f;
+				}
+
+				if ( o > maxtop ) {
+					o = maxtop;
+				}
+
+				if ( o > 1 ) {
+					m.css('margin-top', '-'+o+'px');
+				} else {
+					m.css('margin-top', '');
+				}
+
+				menu.find('li.menu-top').removeClass('opensub');
+				$(this).addClass('opensub');
+			},
+			out: function(){
+				if ( menu.data('wp-responsive') ) {
+					// The menu is in responsive mode, bail
+					return;
+				}
+
+				$(this).removeClass('opensub').find('.wp-submenu').css('margin-top', '');
+			},
+			timeout: 200,
+			sensitivity: 7,
+			interval: 90
+		});
+
+		menu.on('focus.adminmenu', '.wp-submenu a', function(e){
 			if ( menu.data('wp-responsive') ) {
 				// The menu is in responsive mode, bail
 				return;
 			}
 
-			menutop = $(this).offset().top;
-			wintop = $(window).scrollTop();
-			maxtop = menutop - wintop - 30; // max = make the top of the sub almost touch admin bar
-
-			b = menutop + m.height() + 1; // Bottom offset of the menu
-			h = $('#wpwrap').height(); // Height of the entire page
-			o = 60 + b - h;
-			f = $(window).height() + wintop - 15; // The fold
-
-			if ( f < (b - o) ) {
-				o = b - f;
-			}
-
-			if ( o > maxtop ) {
-				o = maxtop;
-			}
-
-			if ( o > 1 ) {
-				m.css('margin-top', '-'+o+'px');
-			} else {
-				m.css('margin-top', '');
-			}
-
-			menu.find('li.menu-top').removeClass('opensub');
-			$(this).addClass('opensub');
-		},
-		out: function(){
+			$(e.target).closest('li.menu-top').addClass('opensub');
+		}).on('blur.adminmenu', '.wp-submenu a', function(e){
 			if ( menu.data('wp-responsive') ) {
 				// The menu is in responsive mode, bail
 				return;
 			}
 
-			$(this).removeClass('opensub').find('.wp-submenu').css('margin-top', '');
-		},
-		timeout: 200,
-		sensitivity: 7,
-		interval: 90
-	});
-
-	menu.on('focus.adminmenu', '.wp-submenu a', function(e){
-		if ( menu.data('wp-responsive') ) {
-			// The menu is in responsive mode, bail
-			return;
-		}
-
-		$(e.target).closest('li.menu-top').addClass('opensub');
-	}).on('blur.adminmenu', '.wp-submenu a', function(e){
-		if ( menu.data('wp-responsive') ) {
-			// The menu is in responsive mode, bail
-			return;
-		}
-
-		$(e.target).closest('li.menu-top').removeClass('opensub');
-	});
+			$(e.target).closest('li.menu-top').removeClass('opensub');
+		});
+	}
 
 	// Move .updated and .error alert boxes. Don't move boxes designed to be inline.
 	$('div.wrap h2:first').nextAll('div.updated, div.error').addClass('below-h2');
@@ -546,48 +550,109 @@ $(document).ready( function() {
 		$window = $( window ),
 		$body = $( document.body ),
 		$adminMenuWrap = $( '#adminmenuwrap' ),
-		$collapseMenu = $( '#collapse-menu' ),
 		$wpwrap = $( '#wpwrap' ),
 		$adminmenu = $( '#adminmenu' ),
 		$overlay = $( '#wp-responsive-overlay' ),
 		$toolbar = $( '#wp-toolbar' ),
 		$toolbarPopups = $toolbar.find( 'a[aria-haspopup="true"]' ),
 		$sortables = $('.meta-box-sortables'),
-		stickyMenuActive = false,
-		wpResponsiveActive = false;
+		wpResponsiveActive = false,
+		$adminbar = $( '#wpadminbar' ),
+		lastScrollPosition = 0,
+		fixedMenuTop = false,
+		fixedMenuBottom = false,
+		menuTop = 0,
+		height = {
+			window: $window.height(),
+			adminbar: $adminbar.height(),
+			menu: $adminMenuWrap.height()
+		};
 
-	window.stickyMenu = {
-		enable: function() {
-			if ( ! stickyMenuActive ) {
-				$document.on( 'wp-window-resized.sticky-menu', $.proxy( this.update, this ) );
-				$collapseMenu.on( 'click.sticky-menu', $.proxy( this.update, this ) );
-				this.update();
-				stickyMenuActive = true;
-			}
-		},
+	function pinMenu() {
+		var windowPos = $window.scrollTop();
 
-		disable: function() {
-			if ( stickyMenuActive ) {
-				$window.off( 'resize.sticky-menu' );
-				$collapseMenu.off( 'click.sticky-menu' );
-				$body.removeClass( 'sticky-menu' );
-				stickyMenuActive = false;
-			}
-		},
+		if ( $adminmenu.data('wp-responsive') ) {
+			return;
+		}
 
-		update: function() {
-			// Make the admin menu sticky if the viewport is taller than it
-			if ( $window.height() > $adminMenuWrap.height() + 32 ) {
-				if ( ! $body.hasClass( 'sticky-menu' ) ) {
-					$body.addClass( 'sticky-menu' );
+		if ( height.menu + height.adminbar > height.window ) {
+			if ( windowPos > lastScrollPosition ) {
+				// Scrolling down
+				if ( fixedMenuTop ) {
+					// let it scroll
+					fixedMenuTop = false;
+					menuTop = $adminMenuWrap.offset().top - height.adminbar;
+
+					$adminMenuWrap.css({
+						position: 'absolute',
+						top: menuTop,
+						bottom: ''
+					});
+				} else if ( ! fixedMenuBottom && $adminMenuWrap.offset().top + height.menu < windowPos + height.window ) {
+					// pin the bottom
+					fixedMenuBottom = true;
+
+					$adminMenuWrap.css({
+						position: 'fixed',
+						top: '',
+						bottom: 0
+					});
 				}
-			} else {
-				if ( $body.hasClass( 'sticky-menu' ) ) {
-					$body.removeClass( 'sticky-menu' );
+			} else if ( windowPos < lastScrollPosition ) {
+				// Scrolling up
+				if ( fixedMenuBottom ) {
+					// let it scroll
+					fixedMenuBottom = false;
+					menuTop = $adminMenuWrap.offset().top - height.adminbar;
+
+					$adminMenuWrap.css({
+						position: 'absolute',
+						top: menuTop,
+						bottom: ''
+					});
+				} else if ( ! fixedMenuTop && $adminMenuWrap.offset().top >= windowPos + height.adminbar ) {
+					// pin the top
+					fixedMenuTop = true;
+
+					$adminMenuWrap.css({
+						position: 'fixed',
+						top: '',
+						bottom: ''
+					});
 				}
 			}
 		}
-	};
+
+		lastScrollPosition = windowPos;
+	}
+
+	function setPinMenu() {
+		if ( $adminmenu.data('wp-responsive') ) {
+			$body.removeClass( 'sticky-menu' );
+			$adminMenuWrap.css({
+				position: '',
+				top: '',
+				bottom: ''
+			});
+		} else if ( height.menu + height.adminbar > height.window ) {
+			$body.removeClass( 'sticky-menu' );
+			pinMenu();
+		} else {
+			$body.addClass( 'sticky-menu' );
+		}
+	}
+
+	setPinMenu();
+	$window.on( 'scroll.pin-menu', pinMenu );
+
+	$document.on( 'wp-window-resized.pin-menu', function() {
+		height.window = $window.height();
+		height.adminbar = $adminbar.height();
+		setPinMenu();
+	}).on( 'wp-collapse-menu.pin-menu', function() {
+		height.menu = $adminMenuWrap.height();
+		setPinMenu();
+	});
 
 	window.wpResponsive = {
 		init: function() {
@@ -638,7 +703,7 @@ $(document).ready( function() {
 		},
 
 		activate: function() {
-			window.stickyMenu.disable();
+			setPinMenu();
 
 			if ( ! $body.hasClass( 'auto-fold' ) ) {
 				$body.addClass( 'auto-fold' );
@@ -649,7 +714,7 @@ $(document).ready( function() {
 		},
 
 		deactivate: function() {
-			window.stickyMenu.enable();
+			setPinMenu();
 			$adminmenu.removeData('wp-responsive');
 			this.enableSortables();
 		},
@@ -722,7 +787,6 @@ $(document).ready( function() {
 		}
 	};
 
-	window.stickyMenu.enable();
 	window.wpResponsive.init();
 });
 

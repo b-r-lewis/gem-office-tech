@@ -50,14 +50,19 @@ endif; // end gem_setup
 add_action( 'after_setup_theme', 'gem_setup' );
 
 
-
-if ( ! function_exists( 'gem_footer_script_setup') ) :
-function gem_footer_script_setup() {
+if ( ! function_exists( 'gem_script_setup') ) :
+function gem_script_setup() {
 	// use Google's jquery
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 
 				'//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', true);
 	wp_enqueue_script( 'jquery' );
+
+	// modernizr
+	wp_register_script( 'modernizr',
+				get_template_directory_uri().'/js/modernizr.custom.js',
+				false);
+	wp_enqueue_script( 'modernizr' );
 
 
 	wp_register_script( 'custom-script',
@@ -92,12 +97,4 @@ function gem_footer_script_setup() {
 
 }
 endif;
-add_action( 'wp_footer', 'gem_footer_script_setup' );
-
-if ( ! function_exists( 'gem_header_script_setup') ) :
-function gem_header_script_setup() {
-	// modernizr
-	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.23644.js');
-}
-endif;
-add_action( 'wp_head', 'gem_header_script_setup' );
+add_action( 'wp_footer', 'gem_script_setup' );

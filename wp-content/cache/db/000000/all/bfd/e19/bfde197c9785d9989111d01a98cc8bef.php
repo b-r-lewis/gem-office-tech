@@ -1,4 +1,4 @@
-Ü,T<?php exit; ?>a:6:{s:10:"last_error";s:0:"";s:10:"last_query";s:180:"
+‰5T<?php exit; ?>a:6:{s:10:"last_error";s:0:"";s:10:"last_query";s:180:"
 					SELECT wp_term_taxonomy.term_id
 					FROM wp_term_taxonomy
 					INNER JOIN wp_terms USING (term_id)

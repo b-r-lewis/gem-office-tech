@@ -1,4 +1,4 @@
-(function($){})(window.jQuery);
+// (function($){})(window.jQuery);
 
 $(document).ready( function() {
 
@@ -6,16 +6,18 @@ $(document).ready( function() {
 	 * Display of appropriate sub-menu for .main-nav
 	 *
 	 */
-	$(".main-nav__link--has-sub").hover( function() {
+	$(".js-nav-toggle").hover( function() {
 			// handlerIn
 			// removed active class from everything
 			$(".main-nav__link--has-sub").removeClass("main-nav__link--has-active-sub");
 
+			var parent_anchor = $(this).find(".main-nav__link--has-sub");
+
 			// add active class to current
-			$(this).addClass("main-nav__link--has-active-sub");
+			parent_anchor.addClass("main-nav__link--has-active-sub");
 
 			// get list of all classes for this element
-			var classList = this.className.split(' ');
+			var classList = parent_anchor[0].className.split(' ');
 
 			// remove unimportant classes from classList
 			var index = 0;
@@ -34,16 +36,10 @@ $(document).ready( function() {
 			// display appropriate submenu (based on remaining class in classList)
 			$( "." + classList[0] + "__sub" ).removeClass("is-hidden");
 
-		}, function() {}
+		}, function() {
+			$(".main-nav__link--has-active-sub").removeClass("main-nav__link--has-active-sub");
+			$(".main-nav__sub-list").addClass("is-hidden");
+		}
 	);
-
-	/**
-	 * Hide sub-menus when mouse leaves menu area
-	 *
-	 */
-	$(".main-nav").mouseleave( function() {
-		$(".main-nav__link--has-active-sub").removeClass("main-nav__link--has-active-sub");
-		$(".main-nav__sub-list").addClass("is-hidden");
-	});
 
 });

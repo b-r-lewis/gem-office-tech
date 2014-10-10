@@ -34,4 +34,14 @@
 	}
 }
 
+.list-jump {
+	border-right: 1px solid $black;
+	padding-right: $padding;
+	margin-right: $padding;
+
+	&:last-of-type {
+		border: none;
+	}
+}
+
 

@@ -3,13 +3,18 @@
 }
 
 .locations {
-	margin-top: $padding * 2;
-	margin-bottom: $padding * 4;
+	margin-top: $padding * 3;
+	margin-bottom: $padding * 8;
+
+	
+
 	@include grid-container();
 }
 
 [class*="location__"] {
 	@include grid(1,4);
+
+	font-style: normal;
 }
 
 .country-name {

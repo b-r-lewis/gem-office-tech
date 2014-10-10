@@ -39,7 +39,9 @@ body {
 }
 
 .content-wrap {
-	padding-top: $padding * 8;
+	@include grid-container();
+	
+	padding-top: $padding * 5;
 	padding-bottom: $padding * 5;
 }
 
@@ -53,12 +55,12 @@ body {
 }
 
 .footer-wrap {
-	padding-top: $padding * 3;
-	padding-bottom: $padding * 10;
+	padding-top: $padding * 5;
+	padding-bottom: $padding * 8;
 }
 
-[class*="-wrap"]::after {
-	content: "";
-	clear: both;
-	display: table;
-}
+// [class*="-wrap"]::after {
+// 	content: "";
+// 	clear: both;
+// 	display: table;
+// }

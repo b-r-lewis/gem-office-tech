@@ -1161,15 +1161,15 @@ function get_post_type_object( $post_type ) {
  *
  * @global array $wp_post_types List of post types.
  *
- * @see register_post_type()
+ * @see register_post_type() for accepted arguments.
  *
  * @param array|string $args     Optional. An array of key => value arguments to match against
  *                               the post type objects. Default empty array.
  * @param string       $output   Optional. The type of output to return. Accepts post type 'names'
  *                               or 'objects'. Default 'names'.
- * @param string       $operator Optaionl. The logical operation to perform. 'or' means only one
+ * @param string       $operator Optional. The logical operation to perform. 'or' means only one
  *                               element from the array needs to match; 'and' means all elements
- *                               must match. Default 'and'.
+ *                               must match. Accepts 'or' or 'and'. Default 'and'.
  * @return array A list of post type names or objects.
  */
 function get_post_types( $args = array(), $output = 'names', $operator = 'and' ) {
@@ -4719,9 +4719,14 @@ function is_local_attachment($url) {
 function wp_insert_attachment( $args, $file = false, $parent = 0 ) {
 	$defaults = array(
 		'file'        => $file,
-		'post_parent' => $parent
+		'post_parent' => 0
 	);
+
 	$data = wp_parse_args( $args, $defaults );
+
+	if ( ! empty( $parent ) ) {
+		$data['post_parent'] = $parent;
+	}
 
 	$data['post_type'] = 'attachment';
 
@@ -4765,12 +4770,6 @@ function wp_delete_attachment( $post_id, $force_delete = false ) {
 	$meta = wp_get_attachment_metadata( $post_id );
 	$backup_sizes = get_post_meta( $post->ID, '_wp_attachment_backup_sizes', true );
 	$file = get_attached_file( $post_id );
-
-	$intermediate_sizes = array();
-	foreach ( get_intermediate_image_sizes() as $size ) {
-		if ( $intermediate = image_get_intermediate_size( $post_id, $size ) )
-			$intermediate_sizes[] = $intermediate;
-	}
 
 	if ( is_multisite() )
 		delete_transient( 'dirsize_cache' );
@@ -4820,10 +4819,13 @@ function wp_delete_attachment( $post_id, $force_delete = false ) {
 	}
 
 	// Remove intermediate and backup images if there are any.
-	foreach ( $intermediate_sizes as $intermediate ) {
-		/** This filter is documented in wp-admin/custom-header.php */
-		$intermediate_file = apply_filters( 'wp_delete_file', $intermediate['path'] );
-		@ unlink( path_join($uploadpath['basedir'], $intermediate_file) );
+	if ( isset( $meta['sizes'] ) && is_array( $meta['sizes'] ) ) {
+		foreach ( $meta['sizes'] as $size => $sizeinfo ) {
+			$intermediate_file = str_replace( basename( $file ), $sizeinfo['file'], $file );
+			/** This filter is documented in wp-admin/custom-header.php */
+			$intermediate_file = apply_filters( 'wp_delete_file', $intermediate_file );
+			@ unlink( path_join( $uploadpath['basedir'], $intermediate_file ) );
+		}
 	}
 
 	if ( is_array($backup_sizes) ) {

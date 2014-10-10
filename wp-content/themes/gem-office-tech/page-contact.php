@@ -6,7 +6,9 @@
 
 get_header(); the_post(); ?>
 
-<form id="contact-form" class="contact-form">
+<?php the_content(); ?>
+
+<!-- <form id="contact-form" class="contact-form">
     <input type="text" name="form-type" id="form-type" value="contact" class="form-type">
     <div class="row">
       <div class="name-field">
@@ -48,6 +50,6 @@ get_header(); the_post(); ?>
     <div class="row">
         <button type="submit" class="medium button">Send</button>
     </div>
-</form>
+</form> -->
 
 <?php get_footer();

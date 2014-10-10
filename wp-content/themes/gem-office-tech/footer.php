@@ -1,3 +1,4 @@
+	  </div>
 	  </main> <!-- END content-wrap -->
 	  
 		<footer class="footer-wrap">
@@ -24,7 +25,7 @@
 					<div class="adr">
 						<div  class="street-address">515 Valley Brook Ave</div>
 						<span class="locality">Lyndhurst</span>,
-						<span class="region">NJ</abbr> 
+						<span class="region">NJ</span> 
 						<span class="postal-code">07071</span>
 						<div  class="country-name">USA</div>
 					</div>

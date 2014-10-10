@@ -1,4 +1,4 @@
-Ü,T<?php exit; ?>a:6:{s:10:"last_error";s:0:"";s:10:"last_query";s:118:"
+‰5T<?php exit; ?>a:6:{s:10:"last_error";s:0:"";s:10:"last_query";s:118:"
 					SELECT term_taxonomy_id
 					FROM wp_term_taxonomy
 					WHERE taxonomy = 'category'

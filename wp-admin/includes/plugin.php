@@ -60,8 +60,8 @@
  * the file. This is not checked however and the file is only opened for
  * reading.
  *
- * @link http://trac.wordpress.org/ticket/5651 Previous Optimizations.
- * @link http://trac.wordpress.org/ticket/7372 Further and better Optimizations.
+ * @link https://core.trac.wordpress.org/ticket/5651 Previous Optimizations.
+ * @link https://core.trac.wordpress.org/ticket/7372 Further and better Optimizations.
  * @since 1.5.0
  *
  * @param string $plugin_file Path to the plugin file
@@ -533,7 +533,7 @@ function activate_plugin( $plugin, $redirect = '', $network_wide = false, $silen
 	if ( is_wp_error($valid) )
 		return $valid;
 
-	if ( !in_array($plugin, $current) ) {
+	if ( ( $network_wide && ! isset( $current[ $plugin ] ) ) || ( ! $network_wide && ! in_array( $plugin, $current ) ) ) {
 		if ( !empty($redirect) )
 			wp_redirect(add_query_arg('_error_nonce', wp_create_nonce('plugin-activation-error_' . $plugin), $redirect)); // we'll override this later if the plugin can be included without fatal error
 		ob_start();

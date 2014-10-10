@@ -1,12 +1,36 @@
-<!-- <!doctype html> -->
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title><?php bloginfo( 'name' ); ?></title>
+	<title>
+		<?php
+
+			if ( function_exists('is_tag') && is_tag() ) {
+         single_tag_title("Tag Archive for &quot;"); echo '&quot; - ';
+      } elseif ( is_archive() ) {
+         wp_title(''); echo ' Archive - ';
+      } elseif ( is_search() ) {
+         echo 'Search for "'.wp_specialchars($s).'" - ';
+      } elseif ( !(is_404()) && ( is_single() ) || ( is_page() ) ) {
+         wp_title(''); echo ' - ';
+      } elseif ( is_404() ) {
+         echo 'Not Found - ';
+      }
+		
+			if ( is_home() ) {
+				bloginfo( 'name' );
+				echo ' - ';
+				bloginfo( 'description' );
+			} else {
+				bloginfo( 'name' );
+			}
+
+		?>
+	</title>
 	<meta name="title" content="<?php bloginfo( 'name' ); ?>">
 
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); echo '?'.filemtime( get_stylesheet_directory() . '/style.css'); ?>">
 	<? if ( is_home() ) : ?>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
 	<?php endif; ?>
@@ -60,4 +84,5 @@
 			?>
 		</div>
 
-		<main role="main" class="content-wrap">
+		<main role="main">
+		<div class="content-wrap">

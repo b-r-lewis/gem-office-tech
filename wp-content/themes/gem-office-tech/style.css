@@ -1,10 +1,10 @@
 /*
-Theme Name: Gem Office Technology
+Theme Name: Gem Office Technology v1.5.2
 Theme URI: 
 Author: Brian Lewis
 Author URI: http://brianrichardlewis.com
 Description: 
-Version: 1.0
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
@@ -52,7 +52,7 @@ h4 {
   font-size: 1.2em; }
 
 footer {
-  font-size: 0.8em; }
+  font-size: 1em; }
 
 *, *::before, *::after {
   -moz-box-sizing: border-box;
@@ -69,6 +69,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section,
@@ -246,8 +247,12 @@ body {
   left: 0; }
 
 .content-wrap {
-  padding-top: 64px;
+  padding-top: 40px;
   padding-bottom: 40px; }
+  .content-wrap::after {
+    content: "";
+    clear: both;
+    display: block; }
 
 .main-content {
   padding-right: 16px;
@@ -273,13 +278,8 @@ body {
       width: 33.3%; } }
 
 .footer-wrap {
-  padding-top: 24px;
-  padding-bottom: 80px; }
-
-[class*="-wrap"]::after {
-  content: "";
-  clear: both;
-  display: table; }
+  padding-top: 40px;
+  padding-bottom: 64px; }
 
 header a {
   color: #1f1f1f; }
@@ -321,20 +321,22 @@ nav a {
 .main-nav {
   background: #444444;
   display: -webkit-flex;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 0;
-  position: relative; }
+  font-size: 0; }
 
-[class*="main-nav__link"] {
+.main-nav-link-wrap {
+  position: relative;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
+  width: 14.28571%; }
+
+[class*="main-nav__link"] {
   color: white;
   display: table;
   text-align: center;
-  width: 14.28571%; }
+  width: 100%; }
   [class*="main-nav__link"]:hover {
     background: #1f1f1f; }
   [class*="main-nav__link"]:active {
@@ -361,7 +363,7 @@ nav a {
     border-top: solid 0.75rem #1f1f1f;
     border-right: solid 1rem transparent;
     border-left: solid 1rem transparent;
-    z-index: 100; }
+    z-index: 200; }
   .main-nav__link--has-active-sub.current::after {
     border-top-color: #7db131; }
   .main-nav__link--has-active-sub.current:hover::after {
@@ -372,19 +374,20 @@ nav a {
   font-size: 1rem;
   left: 0;
   top: 3em;
-  width: 100%;
   background: #ebebeb;
-  padding: 1em 0; }
+  width: 150%;
+  z-index: 100; }
   .main-nav__sub-list a {
+    border-bottom: solid 1px #999999;
     color: #1f1f1f;
-    display: inline-block;
-    padding-right: 3em;
-    padding-left: 1em;
-    text-align: left;
-    width: auto; }
+    display: block;
+    padding: 1em;
+    text-align: center; }
     .main-nav__sub-list a:hover {
       color: #7db131;
       background: none; }
+    .main-nav__sub-list a:last-of-type {
+      border-bottom: none; }
 
 .nav-cares {
   background: #7db131; }
@@ -395,7 +398,7 @@ nav a {
   background: #292765; }
 
 .is-hidden {
-  visibility: hidden; }
+  display: none; }
 
 .e-auto-wrap {
   width: 100%;
@@ -417,9 +420,14 @@ nav a {
 
 .footer-nav {
   margin-bottom: 32px; }
+  .footer-nav::after {
+    content: "";
+    clear: both;
+    display: block; }
   .footer-nav a {
+    margin-right: 16px;
     padding-right: 16px;
-    padding-left: 16px;
+    float: left;
     border-right: solid 1px #1f1f1f; }
     .footer-nav a:last-of-type {
       border-right: none; }
@@ -430,8 +438,8 @@ nav a {
   background: #7db131; }
 
 .locations {
-  margin-top: 16px;
-  margin-bottom: 32px; }
+  margin-top: 24px;
+  margin-bottom: 64px; }
   .locations::after {
     content: "";
     clear: both;
@@ -440,7 +448,8 @@ nav a {
 [class*="location__"] {
   padding-right: 16px;
   float: left;
-  width: 100%; }
+  width: 100%;
+  font-style: normal; }
   @media (min-width: 45em) {
     [class*="location__"] {
       width: 25%; } }
@@ -606,18 +615,15 @@ nav a {
     background-color: #537520; }
 
 .gem-solutions {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
@@ -642,6 +648,13 @@ nav a {
     [class*="--youtube"] iframe {
       width: 30em;
       height: 20em; } }
+
+.list-jump {
+  border-right: 1px solid #1f1f1f;
+  padding-right: 8px;
+  margin-right: 8px; }
+  .list-jump:last-of-type {
+    border: none; }
 
 .timeline {
   position: relative; }
@@ -683,15 +696,12 @@ nav a {
   margin-bottom: 32px; }
   @media (min-width: 45em) {
     .milestone {
-      display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-justify-content: space-between;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      -webkit-box-align: start;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
       -webkit-align-items: flex-start;
           -ms-flex-align: start;
               align-items: flex-start; } }
@@ -707,7 +717,6 @@ nav a {
 
 .milestone__body {
   background: #444444;
-  -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1; }
@@ -734,7 +743,6 @@ nav a {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      -webkit-box-ordinal-group: 3;
       -webkit-order: 2;
           -ms-flex-order: 2;
               order: 2;
@@ -752,7 +760,6 @@ nav a {
         border-radius: 50%; } }
 
 .milestone__img {
-  -webkit-box-ordinal-group: 4;
   -webkit-order: 3;
       -ms-flex-order: 3;
           order: 3;
@@ -767,12 +774,10 @@ nav a {
   clear: both; }
 
 .milestone:nth-of-type(2n - 1) .milestone__body {
-  -webkit-box-ordinal-group: 4;
   -webkit-order: 3;
       -ms-flex-order: 3;
           order: 3; }
 .milestone:nth-of-type(2n - 1) .milestone__img {
-  -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1; }

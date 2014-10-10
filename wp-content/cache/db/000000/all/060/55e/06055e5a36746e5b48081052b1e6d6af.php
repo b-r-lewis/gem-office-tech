@@ -1,4 +1,4 @@
-Ü,T<?php exit; ?>a:6:{s:10:"last_error";s:0:"";s:10:"last_query";s:91:"
+‰5T<?php exit; ?>a:6:{s:10:"last_error";s:0:"";s:10:"last_query";s:91:"
 			SELECT ID
 			FROM wp_posts
 			WHERE post_title = 'Archive'

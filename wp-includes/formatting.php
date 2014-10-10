@@ -205,54 +205,66 @@ function wptexturize($text, $reset = false) {
 
 	// Look for shortcodes and HTML elements.
 
-	$regex =  '/('			// Capture the entire match.
-		.	'<'		// Find start of element.
-		.	'(?(?=!--)'	// Is this a comment?
-		.		'.+?--\s*>'	// Find end of comment
+	$comment_regex = 
+			'!'				// Start of comment, after the <.
+		.	'(?:'			// Unroll the loop: Consume everything until --> is found.
+		.		'-(?!->)'	// Dash not followed by end of comment.
+		.		'[^\-]*+'	// Consume non-dashes.
+		.	')*+'			// Loop possessively.
+		.	'(?:-->)?';		// End of comment. If not found, match all input.
+	
+	$shortcode_regex =
+			'\['			// Find start of shortcode.
+		.	'[\/\[]?'		// Shortcodes may begin with [/ or [[
+		.	'[^\s\/\[\]]'	// No whitespace before name.
+		.	'[^\[\]]*+'		// Shortcodes do not contain other shortcodes. Possessive critical.
+		.	'\]'			// Find end of shortcode.
+		.	'\]?';			// Shortcodes may end with ]]
+	
+	$regex = 
+			'/('					// Capture the entire match.
+		.		'<'					// Find start of element.
+		.		'(?(?=!--)'			// Is this a comment?
+		.			$comment_regex	// Find end of comment.
+		.		'|'
+		.			'[^>]+>'		// Find end of element.
+		.		')'
 		.	'|'
-		.		'[^>]+>'	// Find end of element
-		.	')'
-		. '|'
-		.	'\['		// Find start of shortcode.
-		.	'\[?'		// Shortcodes may begin with [[
-		.	'(?:'
-		.		'[^\[\]<>]'	// Shortcodes do not contain other shortcodes.
-		.	'|'
-		.		'<[^>]+>' 	// HTML elements permitted. Prevents matching ] before >.
-		.	')++'
-		.	'\]'		// Find end of shortcode.
-		.	'\]?'		// Shortcodes may end with ]]
-		. ')/s';
+		.		$shortcode_regex	// Find shortcodes.
+		.	')/s';
 
 	$textarr = preg_split( $regex, $text, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY );
 
 	foreach ( $textarr as &$curl ) {
 		// Only call _wptexturize_pushpop_element if $curl is a delimiter.
 		$first = $curl[0];
-		if ( '<' === $first && '>' === substr( $curl, -1 ) ) {
-			// This is an HTML delimiter.
+		if ( '<' === $first && '<!--' === substr( $curl, 0, 4 ) ) {
+			// This is an HTML comment delimeter.
 
-			if ( '<!--' !== substr( $curl, 0, 4 ) ) {
-				_wptexturize_pushpop_element( $curl, $no_texturize_tags_stack, $no_texturize_tags );
-			}
+			continue;
+
+		} elseif ( '<' === $first && '>' === substr( $curl, -1 ) ) {
+			// This is an HTML element delimiter.
+
+			_wptexturize_pushpop_element( $curl, $no_texturize_tags_stack, $no_texturize_tags );
 
 		} elseif ( '' === trim( $curl ) ) {
 			// This is a newline between delimiters.  Performance improves when we check this.
 
 			continue;
 
-		} elseif ( '[' === $first && 1 === preg_match( '/^\[(?:[^\[\]<>]|<[^>]+>)++\]$/', $curl ) ) {
+		} elseif ( '[' === $first && 1 === preg_match( '/^' . $shortcode_regex . '$/', $curl ) ) {
 			// This is a shortcode delimiter.
 
-			_wptexturize_pushpop_element( $curl, $no_texturize_shortcodes_stack, $no_texturize_shortcodes );
-
-		} elseif ( '[' === $first && 1 === preg_match( '/^\[\[?(?:[^\[\]<>]|<[^>]+>)++\]\]?$/', $curl ) ) {
-			// This is an escaped shortcode delimiter.
-
-			// Do not texturize.
-			// Do not push to the shortcodes stack.
-
-			continue;
+			if ( '[[' !== substr( $curl, 0, 2 ) && ']]' !== substr( $curl, -2 ) ) {
+				// Looks like a normal shortcode.
+				_wptexturize_pushpop_element( $curl, $no_texturize_shortcodes_stack, $no_texturize_shortcodes );
+			} else {
+				// Looks like an escaped shortcode.
+				// Do not texturize.
+				// Do not push to the shortcodes stack.
+				continue;
+			}
 
 		} elseif ( empty( $no_texturize_shortcodes_stack ) && empty( $no_texturize_tags_stack ) ) {
 			// This is neither a delimiter, nor is this content inside of no_texturize pairs.  Do texturize.
@@ -313,7 +325,7 @@ function _wptexturize_pushpop_element($text, &$stack, $disabled_elements) {
 
 	// Parse out the tag name.
 	$space = strpos( $text, ' ' );
-	if ( FALSE === $space ) {
+	if ( false === $space ) {
 		$space = -1;
 	} else {
 		$space -= $name_offset;
@@ -1054,10 +1066,10 @@ function sanitize_file_name( $filename ) {
 	 */
 	$special_chars = apply_filters( 'sanitize_file_name_chars', $special_chars, $filename_raw );
 	$filename = preg_replace( "#\x{00a0}#siu", ' ', $filename );
-	$filename = str_replace($special_chars, '', $filename);
+	$filename = str_replace( $special_chars, '', $filename );
 	$filename = str_replace( array( '%20', '+' ), '-', $filename );
-	$filename = preg_replace('/[\s-]+/', '-', $filename);
-	$filename = trim($filename, '.-_');
+	$filename = preg_replace( '/[\r\n\t -]+/', '-', $filename );
+	$filename = trim( $filename, '.-_' );
 
 	// Split the filename into a base and extension[s]
 	$parts = explode('.', $filename);
