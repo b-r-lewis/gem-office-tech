@@ -15,16 +15,45 @@
 					</div>
 				</a>
 			</div>
-		<? endif;
+		<?php endif;
 		
 		/**
 		 * Recently added posts
 		 *
 		 * Display on: single, single-job
 		 */
-		
 
-	?>
+		if ( is_single() ) : ?>
+			<div class="recent-post-wrap">
+				<?php
+					$post_type = get_post_type();
+					if ( !$post_type ) { $post_type = 'post'; 
+					}
 
+					$side_header = 'Recent ';
+					switch ( $post_type ) {
+						case 'job_listing':
+							$side_header .= 'Job Listings';
+							break;
+						
+						default:
+							$side_header .= 'News';
+							break;
+					}
 
-</div>
+					$post_args = array(	'post_type' => $post_type, 'posts_per_page' => 5 );
+					query_posts( $post_args );
+				?>
+				<h4><?php echo $side_header; ?></h4>
+				<?php if ( have_posts() ) : ?>
+				<ul>
+					<?php while ( have_posts() ) : the_post(); ?>
+					<li><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+					<?php endwhile; ?>
+				</ul>
+				<?php endif; ?>
+
+			</div>
+		<?php endif;
+
+?></div>

@@ -1,91 +1,10 @@
-.search-wrap,
-.search-results {
-	width: 80%;
-	margin: 0 auto;
+.job_listings {
+	min-height: 50vh; 
 }
 
-.search-wrap { padding: $padding * 3 0; }
-
-.search-fields {
-	margin-top: $padding * 2; 
-}
-
-.search-filters {
-	background: $gray;
-	border-top: solid 2px $dark-gray;
-	font-size: 0.8em;
-	padding: $padding/2 $padding;
-}
-
-.search-filters input {
-	margin-right: $padding;
-}
-
-.search-filters label {
-	margin-right: $padding * 2;
-}
-
-.search-tags:before, 
-.search-fields:after {
-	clear: both;
-	content: " ";
-	display: table;
-}
-
-.search-keywords { float: left; }
-
-.search-locations { float: right; }
-
-.search-tags { display: block; }
-
-.search-keywords,
-.search-locations {
-	background: $gray;
-	width: 50%;
-	padding: $padding;
-}
-
-.search-keywords input,
-.search-locations input {
-	 width: 90%;
-}
-
-.search-results {
-	padding: $padding * 5 0;
-}
-
-.job-profile,
-.job-profile--headers {
-	@include grid-container();
-	padding: 0.5em 0;
-}
-
-.job-profile--headers,
-.job-profile:nth-of-type(2n-1) {
-	background: $light-gray;
-}
-
-.job-profile--headers {
-	font-weight: bold;
-}
-
-[class*="job-profile__"] {
-	@include grid(1,6);
-	display: inline-block;
-
-	font-size: 1rem;
-}
-
-.job-profile__title {
-	@include grid(2,6);
-}
-
-.job-profile__view a {
+.application_button {
 	color: $white;
-	padding: 5px 10px;
-	margin: 0 auto;
-	background-color: $green;
-	// border-radius: 4px;
-
-	&:hover { background-color: $dark-green }
+	padding: $padding*2 $padding*4;
+	background: $blue;
+	border: none;
 }

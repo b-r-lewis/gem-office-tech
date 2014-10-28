@@ -39,7 +39,7 @@
 		<div class="news-wrap slick-news">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-				<h3><?php the_title(); ?></h3>
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<div class="entry"> <?php the_content(); ?></div>
 			</article>
 		<?php endwhile; ?>

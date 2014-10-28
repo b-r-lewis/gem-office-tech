@@ -5,7 +5,6 @@ function pre_gem_setup() {
 
 	register_taxonomy_for_object_type( 'category', 'attachment' );
 	register_taxonomy_for_object_type( 'post_tag', 'attachment' );
-	// register_taxonomy{ 'category', 'job-posting' };
 
 }
 endif; // end pre_gem_setup
@@ -20,11 +19,10 @@ function gem_setup() {
 	// Milestone (ACF required)
 	require get_template_directory() . '/inc/custom-post-type-milestone.php';
 
-	require get_template_directory() . '/inc/custom-post-type-job-posting.php';
-
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
 
+	// This theme uses a custom header image
 	$header_args = array(
 		'flex-width'    => true,
 		'width'         => 612,
@@ -45,6 +43,15 @@ function gem_setup() {
 	// This theme uses a custom wp_nav_menu walker
 	require get_template_directory() . '/inc/custom-main-nav-walker.php';
 
+	// Disable Contact Form 7 JS/CSS for most pages
+	add_filter( 'wpcf7_load_js', '__return_false' );
+	add_filter( 'wpcf7_load_css', '__return_false' );
+
+	// Disable Comments in admin menu
+	function remove_menus() {
+		remove_menu_page( 'edit-comments.php' );
+	}
+	add_action( 'admin_menu', 'remove_menus' );
 }
 endif; // end gem_setup
 add_action( 'after_setup_theme', 'gem_setup' );
@@ -52,19 +59,19 @@ add_action( 'after_setup_theme', 'gem_setup' );
 
 if ( ! function_exists( 'gem_script_setup') ) :
 function gem_script_setup() {
-	// use Google's jquery
+	// Ditch Wordpress's default jquery, use Google's
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 
 				'//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', true);
 	wp_enqueue_script( 'jquery' );
 
-	// modernizr
+	// Use modernizr
 	wp_register_script( 'modernizr',
 				get_template_directory_uri().'/js/modernizr.custom.js',
 				false);
 	wp_enqueue_script( 'modernizr' );
 
-
+	// Use custom scripts
 	wp_register_script( 'custom-script',
 				get_template_directory_uri().'/js/script.js',
 				array('jquery'),
@@ -72,6 +79,8 @@ function gem_script_setup() {
 				true );
 	wp_enqueue_script( 'custom-script' );
 
+	// On the Home page:
+	// Use Slick carousel
 	if ( is_home() ) :
 		wp_register_script( 'slick-script',
 				'//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js',
@@ -86,13 +95,21 @@ function gem_script_setup() {
 		wp_enqueue_script( 'custom-slick' );
 	endif;
 
-	if ( is_page( 'Verticals' ) ) :
+	// On a Link List page:
+	// Use Youtube converter
+	if ( is_page_template( 'page-link-list.php' ) ) :
 		wp_register_script( 'youtube-embed',
 				'//labnol.googlecode.com/files/youtube.js',
 				array('jquery'),
 				1.0,
 				true );
 		wp_enqueue_script( 'youtube-embed' );
+	endif;
+
+	// On the Contact page:
+	// Use Contact Form 7
+	if ( is_page_template( 'page-contact.php' ) ) :
+		wpcf7_enqueue_scripts();
 	endif;
 
 }

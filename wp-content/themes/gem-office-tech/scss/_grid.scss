@@ -29,7 +29,7 @@
 		}
 	}
 
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		@if $columns == 1 {
 			width: 100%;
 		}

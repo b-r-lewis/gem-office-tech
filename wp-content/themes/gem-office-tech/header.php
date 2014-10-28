@@ -31,9 +31,15 @@
 	<meta name="title" content="<?php bloginfo( 'name' ); ?>">
 
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); echo '?'.filemtime( get_stylesheet_directory() . '/style.css'); ?>">
-	<? if ( is_home() ) : ?>
+	<?php if ( is_home() ) : ?>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
 	<?php endif; ?>
+
+	<?php if ( is_page_template( 'page-contact.php' ) ) :
+		if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
+			wpcf7_enqueue_styles();
+		}
+	endif; ?>
 
 	<?php wp_head(); ?>
 

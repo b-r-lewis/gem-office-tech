@@ -4,7 +4,7 @@ Theme URI:
 Author: Brian Lewis
 Author URI: http://brianrichardlewis.com
 Description: 
-Version: 1.4.3
+Version: 1.5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
@@ -26,7 +26,7 @@ html {
     html {
       font-size: 17px; } }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family: Orbitron, Pathway Gothic One, Open Sans, Arial, sans-serif; }
 
 h1 {
@@ -262,7 +262,7 @@ body {
   @media (min-width: 45em) {
     .main-content {
       width: 66.6%; } }
-  @media (min-width: 45em) {
+  @media (min-width: 60em) {
     .main-content {
       width: 66.6%; } }
 
@@ -273,7 +273,7 @@ body {
   @media (min-width: 45em) {
     .side-content {
       width: 33.3%; } }
-  @media (min-width: 45em) {
+  @media (min-width: 60em) {
     .side-content {
       width: 33.3%; } }
 
@@ -453,7 +453,7 @@ nav a {
   @media (min-width: 45em) {
     [class*="location__"] {
       width: 25%; } }
-  @media (min-width: 45em) {
+  @media (min-width: 60em) {
     [class*="location__"] {
       width: 25%; } }
 
@@ -485,134 +485,74 @@ nav a {
     clear: both;
     display: block; }
 
-.form-type {
-  display: none !important; }
+.screen-reader-response {
+  display: none; }
 
-.contact-form {
-  margin-left: 40px; }
-  .contact-form .row {
-    margin-bottom: 16px; }
-  .contact-form input,
-  .contact-form textarea {
-    display: block; }
-  .contact-form input {
-    padding: 8px;
-    width: 60%; }
-  .contact-form textarea {
-    width: 60%; }
-  .contact-form input[type="submit"] {
-    width: 30%;
-    padding: 8px 16px; }
-  .contact-form .required {
-    position: relative; }
-  .contact-form .required::before {
-    content: "*";
-    color: red;
-    position: absolute;
-    top: 0;
-    left: -12px; }
-  .contact-form .error {
-    display: none;
-    color: red; }
+.wpcf7-form br {
+  display: none; }
 
-.search-wrap,
-.search-results {
-  width: 80%;
-  margin: 0 auto; }
-
-.search-wrap {
-  padding: 24px 0; }
-
-.search-fields {
-  margin-top: 16px; }
-
-.search-filters {
-  background: #999999;
-  border-top: solid 2px #444444;
-  font-size: 0.8em;
-  padding: 4px 8px; }
-
-.search-filters input {
-  margin-right: 8px; }
-
-.search-filters label {
-  margin-right: 16px; }
-
-.search-tags:before,
-.search-fields:after {
-  clear: both;
-  content: " ";
-  display: table; }
-
-.search-keywords {
-  float: left; }
-
-.search-locations {
-  float: right; }
-
-.search-tags {
+.wpcf7-form-control-wrap {
   display: block; }
 
-.search-keywords,
-.search-locations {
-  background: #999999;
+.wpcf7-form-control {
+  padding: 8px 4px; }
+
+.wpcf7-not-valid-tip {
+  background: #ebebeb;
+  border-radius: 5px;
+  display: block;
+  margin-top: 1em;
+  padding: 4px;
+  position: relative;
   width: 50%;
-  padding: 8px; }
-
-.search-keywords input,
-.search-locations input {
-  width: 90%; }
-
-.search-results {
-  padding: 40px 0; }
-
-.job-profile,
-.job-profile--headers {
-  padding: 0.5em 0; }
-  .job-profile::after,
-  .job-profile--headers::after {
+  -webkit-animation: reveal 0.25s 1;
+          animation: reveal 0.25s 1; }
+  .wpcf7-not-valid-tip::after {
     content: "";
-    clear: both;
-    display: block; }
+    position: absolute;
+    top: -0.7rem;
+    left: 0.7rem;
+    border-right: solid 1rem transparent;
+    border-bottom: solid 0.75rem #ebebeb;
+    border-left: solid 1rem transparent; }
 
-.job-profile--headers,
-.job-profile:nth-of-type(2n-1) {
-  background: #ebebeb; }
+@-webkit-keyframes reveal {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0); }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
 
-.job-profile--headers {
-  font-weight: bold; }
-
-[class*="job-profile__"] {
-  padding-right: 16px;
-  float: left;
-  width: 100%;
-  display: inline-block;
-  font-size: 1rem; }
-  @media (min-width: 45em) {
-    [class*="job-profile__"] {
-      width: 25%; } }
-  @media (min-width: 45em) {
-    [class*="job-profile__"] {
-      width: 16.6%; } }
-
-.job-profile__title {
-  padding-right: 16px;
-  float: left;
-  width: 100%; }
-  @media (min-width: 45em) {
-    .job-profile__title {
-      width: 50%; } }
-  @media (min-width: 45em) {
-    .job-profile__title {
-      width: 33.2%; } }
-
-.job-profile__view a {
+@keyframes reveal {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0); }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+input[type="submit"] {
   color: white;
-  padding: 5px 10px;
-  margin: 0 auto;
-  background-color: #7db131; }
-  .job-profile__view a:hover {
-    background-color: #537520; }
+  padding: 16px 32px;
+  background: #317db1;
+  border: none; }
+
+.required {
+  position: relative; }
+  .required::before {
+    content: "*";
+    position: absolute;
+    left: -12px;
+    color: red; }
+
+.job_listings {
+  min-height: 50vh; }
+
+.application_button {
+  color: white;
+  padding: 16px 32px;
+  background: #317db1;
+  border: none; }
 
 .gem-solutions {
   display: -webkit-flex;
